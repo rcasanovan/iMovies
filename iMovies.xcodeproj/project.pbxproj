@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		11F1C77A0B50259993134249 /* libPods-iMoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E71ACF5F54761D180B64D /* libPods-iMoviesTests.a */; };
 		B15A02DB1F1699BF8CAFD731 /* libPods-iMovies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B410692AFE4604063886338C /* libPods-iMovies.a */; };
+		C82AD782213DA12A000EF9A4 /* IMSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD781213DA12A000EF9A4 /* IMSearchViewController.swift */; };
 		C8C54B83213D9F2500E8C5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */; };
-		C8C54B85213D9F2500E8C5A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C54B84213D9F2500E8C5A0 /* ViewController.swift */; };
-		C8C54B88213D9F2500E8C5A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B86213D9F2500E8C5A0 /* Main.storyboard */; };
 		C8C54B8A213D9F2600E8C5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */; };
 		C8C54B8D213D9F2600E8C5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B8B213D9F2600E8C5A0 /* LaunchScreen.storyboard */; };
 		C8C54B98213D9F2600E8C5A0 /* iMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C54B97213D9F2600E8C5A0 /* iMoviesTests.swift */; };
@@ -33,10 +32,9 @@
 		86835C74085F076D13B3E165 /* Pods-iMoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMoviesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iMoviesTests/Pods-iMoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B410692AFE4604063886338C /* libPods-iMovies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iMovies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B79E71ACF5F54761D180B64D /* libPods-iMoviesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iMoviesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C82AD781213DA12A000EF9A4 /* IMSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSearchViewController.swift; sourceTree = "<group>"; };
 		C8C54B7F213D9F2500E8C5A0 /* iMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8C54B84213D9F2500E8C5A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C8C54B87213D9F2500E8C5A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8C54B8C213D9F2600E8C5A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8C54B8E213D9F2600E8C5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +75,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C82AD77F213DA0D4000EF9A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD780213DA0EF000EF9A4 /* Search */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C82AD780213DA0EF000EF9A4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD781213DA12A000EF9A4 /* IMSearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		C8C54B76213D9F2400E8C5A0 = {
 			isa = PBXGroup;
 			children = (
@@ -101,8 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */,
-				C8C54B84213D9F2500E8C5A0 /* ViewController.swift */,
-				C8C54B86213D9F2500E8C5A0 /* Main.storyboard */,
+				C82AD77F213DA0D4000EF9A4 /* Views */,
 				C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */,
 				C8C54B8B213D9F2600E8C5A0 /* LaunchScreen.storyboard */,
 				C8C54B8E213D9F2600E8C5A0 /* Info.plist */,
@@ -174,6 +187,7 @@
 		C8C54B77213D9F2400E8C5A0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = IM;
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Careem;
@@ -213,7 +227,6 @@
 			files = (
 				C8C54B8D213D9F2600E8C5A0 /* LaunchScreen.storyboard in Resources */,
 				C8C54B8A213D9F2600E8C5A0 /* Assets.xcassets in Resources */,
-				C8C54B88213D9F2500E8C5A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,15 +245,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-iMovies-checkManifestLockResult.txt",
 			);
@@ -254,15 +263,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-iMoviesTests-checkManifestLockResult.txt",
 			);
@@ -278,7 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C54B85213D9F2500E8C5A0 /* ViewController.swift in Sources */,
+				C82AD782213DA12A000EF9A4 /* IMSearchViewController.swift in Sources */,
 				C8C54B83213D9F2500E8C5A0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,14 +307,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C8C54B86213D9F2500E8C5A0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8C54B87213D9F2500E8C5A0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C8C54B8B213D9F2600E8C5A0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

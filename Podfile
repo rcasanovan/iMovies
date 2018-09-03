@@ -9,7 +9,7 @@ inhibit_all_warnings!
 
 def iMoviesPods
     #Images
-    pod 'HanekeSwift', '~> 0.10.1'
+    pod 'Haneke', '~> 1.0'
 end
 
 target 'iMovies' do
