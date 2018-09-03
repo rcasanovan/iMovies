@@ -30,7 +30,7 @@ class IMNetworkTests: XCTestCase {
         requestManager.send(request: getMoviesRequest)
     }
     
-    func testGetBatmanMovies() {
+    func getMovie(movie: String) {
         let moviesExpectation: XCTestExpectation = self.expectation(description: "movies")
         
         getMoviesWith(movie: "batman", page: 1) { (response) in
@@ -54,52 +54,20 @@ class IMNetworkTests: XCTestCase {
         self.waitForExpectations(timeout: 20.0, handler: nil)
     }
     
-    func testGetSupermanMovies() {
-        let moviesExpectation: XCTestExpectation = self.expectation(description: "movies")
-        
-        getMoviesWith(movie: "superman", page: 1) { (response) in
-            switch response {
-            case .success(let movies):
-                guard let count = movies?.results.count else {
-                    XCTFail("impossible to get the total number of movies related")
-                    return
-                }
-                
-                XCTAssertTrue(count > 0, "We're not movies releated. Really?")
-                break
-            case .failure(let error):
-                XCTFail(error.localizedDescription)
-                break
-            }
-            
-            moviesExpectation.fulfill()
-        }
-        
-        self.waitForExpectations(timeout: 20.0, handler: nil)
+    func testGetBatmanMovies() {
+        getMovie(movie: "Batman")
     }
     
-    func testGetBackToTheFuturenMovies() {
-        let moviesExpectation: XCTestExpectation = self.expectation(description: "movies")
-        
-        getMoviesWith(movie: "back to the future", page: 1) { (response) in
-            switch response {
-            case .success(let movies):
-                guard let count = movies?.results.count else {
-                    XCTFail("impossible to get the total number of movies related")
-                    return
-                }
-                
-                XCTAssertTrue(count > 0, "We're not movies releated. Really?")
-                break
-            case .failure(let error):
-                XCTFail(error.localizedDescription)
-                break
-            }
-            
-            moviesExpectation.fulfill()
-        }
-        
-        self.waitForExpectations(timeout: 20.0, handler: nil)
+    func testGetSupermanMovies() {
+        getMovie(movie: "superman")
+    }
+    
+    func testGetStarWarsMovies() {
+        getMovie(movie: "Star Wars")
+    }
+    
+    func testGetTheLordOfTheRingsMovies() {
+        getMovie(movie: "The Lord of")
     }
     
 }

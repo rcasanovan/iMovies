@@ -36,7 +36,10 @@ enum Endpoint: EndpointProtocol {
     var rawValue: String {
         switch self {
         case .searchMovie(let movie, let page):
-            return "/search/movie?api_key=e579f9a644180d2a8887223f0d0ad5ff&query=\(movie)&page=\(page)"
+            guard let movieUrlFormat = movie.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else {
+                return "/search/movie?api_key=e579f9a644180d2a8887223f0d0ad5ff&page=\(page)"
+            }
+            return "/search/movie?api_key=e579f9a644180d2a8887223f0d0ad5ff&query=\(movieUrlFormat)&page=\(page)"
         }
     }
     
