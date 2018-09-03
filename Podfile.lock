@@ -1,0 +1,16 @@
+PODS:
+  - HanekeSwift (0.10.1)
+
+DEPENDENCIES:
+  - HanekeSwift (~> 0.10.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - HanekeSwift
+
+SPEC CHECKSUMS:
+  HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
+
+PODFILE CHECKSUM: 8e961a13dfdc0f1a1d0c76f552e9d9b9595314a7
+
+COCOAPODS: 1.5.3
