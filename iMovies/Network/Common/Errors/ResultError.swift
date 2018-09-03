@@ -15,6 +15,8 @@ enum ResultError: Error {
             return "Network error. HTTP Code \(code.intValue)"
         case .serverError(let underlying):
             return "Server error: \(String(describing: underlying))"
+        case .parsingError(let message):
+            return "Parsing error: \(message)"
         default:
             return "Unknown error"
         }

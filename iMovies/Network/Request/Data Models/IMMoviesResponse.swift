@@ -1,5 +1,5 @@
 //
-//  IMMovieResponse.swift
+//  IMMoviesResponse.swift
 //  iMovies
 //
 //  Created by Ricardo Casanova on 03/09/2018.
@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct IMMovieResponse: Decodable {
+struct IMMoviesResponse: Decodable {
+    let results: [IMSingleMovieResponse]
+}
+
+struct IMSingleMovieResponse: Decodable {
     let id: UInt
     let poster_path: String
     let title: String

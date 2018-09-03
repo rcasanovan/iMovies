@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct IMGetMoviesRequest: RequestProtocol {
-    typealias ResponseType = [IMMovieResponse]
-    var completion: ((Result<[IMMovieResponse]?>) -> Void)?
+struct IMGetMoviesRequest: RequestProtocol {    
+    typealias ResponseType = IMMoviesResponse
+    var completion: ((Result<IMMoviesResponse?>) -> Void)?
     var method: HTTPMethod = .get
     var url: URL? = nil
     var encodableBody: Encodable? = nil
