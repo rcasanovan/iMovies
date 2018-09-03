@@ -10,6 +10,9 @@ inhibit_all_warnings!
 def iMoviesPods
     #Images
     pod 'Haneke', '~> 1.0'
+    
+    #networking
+    pod 'FXReachability', '~> 1.3.2'
 end
 
 target 'iMovies' do

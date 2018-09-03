@@ -11,6 +11,16 @@
 		B15A02DB1F1699BF8CAFD731 /* libPods-iMovies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B410692AFE4604063886338C /* libPods-iMovies.a */; };
 		C82AD782213DA12A000EF9A4 /* IMSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD781213DA12A000EF9A4 /* IMSearchViewController.swift */; };
 		C82AD786213DA55A000EF9A4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD785213DA55A000EF9A4 /* UIView.swift */; };
+		C82AD78B213DADF9000EF9A4 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD78A213DADF9000EF9A4 /* EndPoint.swift */; };
+		C82AD78E213DB130000EF9A4 /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD78D213DB130000EF9A4 /* ResultError.swift */; };
+		C82AD790213DB194000EF9A4 /* IMRequestErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD78F213DB194000EF9A4 /* IMRequestErrors.swift */; };
+		C82AD792213DB1B7000EF9A4 /* HTTPCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD791213DB1B7000EF9A4 /* HTTPCode.swift */; };
+		C82AD794213DB1CF000EF9A4 /* NetworkHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD793213DB1CF000EF9A4 /* NetworkHeaders.swift */; };
+		C82AD796213DB20B000EF9A4 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD795213DB20B000EF9A4 /* RequestManager.swift */; };
+		C82AD798213DB217000EF9A4 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD797213DB217000EF9A4 /* RequestProtocol.swift */; };
+		C82AD79A213DB226000EF9A4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD799213DB226000EF9A4 /* Result.swift */; };
+		C82AD79D213DB3D3000EF9A4 /* IMMovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD79C213DB3D3000EF9A4 /* IMMovieResponse.swift */; };
+		C82AD79F213DB447000EF9A4 /* IMGetMoviesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD79E213DB447000EF9A4 /* IMGetMoviesRequest.swift */; };
 		C8C54B83213D9F2500E8C5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */; };
 		C8C54B8A213D9F2600E8C5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */; };
 		C8C54B8D213D9F2600E8C5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B8B213D9F2600E8C5A0 /* LaunchScreen.storyboard */; };
@@ -35,6 +45,16 @@
 		B79E71ACF5F54761D180B64D /* libPods-iMoviesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iMoviesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C82AD781213DA12A000EF9A4 /* IMSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSearchViewController.swift; sourceTree = "<group>"; };
 		C82AD785213DA55A000EF9A4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		C82AD78A213DADF9000EF9A4 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		C82AD78D213DB130000EF9A4 /* ResultError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultError.swift; sourceTree = "<group>"; };
+		C82AD78F213DB194000EF9A4 /* IMRequestErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMRequestErrors.swift; sourceTree = "<group>"; };
+		C82AD791213DB1B7000EF9A4 /* HTTPCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPCode.swift; sourceTree = "<group>"; };
+		C82AD793213DB1CF000EF9A4 /* NetworkHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHeaders.swift; sourceTree = "<group>"; };
+		C82AD795213DB20B000EF9A4 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		C82AD797213DB217000EF9A4 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		C82AD799213DB226000EF9A4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		C82AD79C213DB3D3000EF9A4 /* IMMovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMMovieResponse.swift; sourceTree = "<group>"; };
+		C82AD79E213DB447000EF9A4 /* IMGetMoviesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGetMoviesRequest.swift; sourceTree = "<group>"; };
 		C8C54B7F213D9F2500E8C5A0 /* iMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +129,55 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		C82AD787213DADB3000EF9A4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD789213DADC3000EF9A4 /* Common */,
+				C82AD788213DADBB000EF9A4 /* Request */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C82AD788213DADBB000EF9A4 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD79B213DB3B6000EF9A4 /* Data Models */,
+				C82AD79E213DB447000EF9A4 /* IMGetMoviesRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		C82AD789213DADC3000EF9A4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD78C213DB11B000EF9A4 /* Errors */,
+				C82AD78A213DADF9000EF9A4 /* EndPoint.swift */,
+				C82AD791213DB1B7000EF9A4 /* HTTPCode.swift */,
+				C82AD793213DB1CF000EF9A4 /* NetworkHeaders.swift */,
+				C82AD795213DB20B000EF9A4 /* RequestManager.swift */,
+				C82AD797213DB217000EF9A4 /* RequestProtocol.swift */,
+				C82AD799213DB226000EF9A4 /* Result.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C82AD78C213DB11B000EF9A4 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD78D213DB130000EF9A4 /* ResultError.swift */,
+				C82AD78F213DB194000EF9A4 /* IMRequestErrors.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		C82AD79B213DB3B6000EF9A4 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD79C213DB3D3000EF9A4 /* IMMovieResponse.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
 		C8C54B76213D9F2400E8C5A0 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +201,7 @@
 		C8C54B81213D9F2500E8C5A0 /* iMovies */ = {
 			isa = PBXGroup;
 			children = (
+				C82AD787213DADB3000EF9A4 /* Network */,
 				C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */,
 				C82AD77F213DA0D4000EF9A4 /* Views */,
 				C82AD783213DA542000EF9A4 /* Extensions */,
@@ -302,9 +372,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82AD790213DB194000EF9A4 /* IMRequestErrors.swift in Sources */,
+				C82AD79D213DB3D3000EF9A4 /* IMMovieResponse.swift in Sources */,
 				C82AD782213DA12A000EF9A4 /* IMSearchViewController.swift in Sources */,
+				C82AD792213DB1B7000EF9A4 /* HTTPCode.swift in Sources */,
+				C82AD78E213DB130000EF9A4 /* ResultError.swift in Sources */,
 				C82AD786213DA55A000EF9A4 /* UIView.swift in Sources */,
+				C82AD79F213DB447000EF9A4 /* IMGetMoviesRequest.swift in Sources */,
+				C82AD794213DB1CF000EF9A4 /* NetworkHeaders.swift in Sources */,
+				C82AD796213DB20B000EF9A4 /* RequestManager.swift in Sources */,
+				C82AD78B213DADF9000EF9A4 /* EndPoint.swift in Sources */,
 				C8C54B83213D9F2500E8C5A0 /* AppDelegate.swift in Sources */,
+				C82AD798213DB217000EF9A4 /* RequestProtocol.swift in Sources */,
+				C82AD79A213DB226000EF9A4 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
