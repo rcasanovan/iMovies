@@ -14,6 +14,8 @@ class IMMovieTableViewCell: UITableViewCell {
     private var backgroundLayerImageView: UIImageView = UIImageView()
     private var posterImageView: UIImageView = UIImageView()
     private var titleLabel: UILabel = UILabel()
+    private var releaseDateLabel: UILabel = UILabel()
+    private var overviewLabel: UILabel = UILabel()
     
     private var viewModel: IMMovieViewModel?
     
@@ -33,7 +35,7 @@ class IMMovieTableViewCell: UITableViewCell {
     
     public func bindWithViewModel(_ viewModel: IMMovieViewModel) {
         self.viewModel = viewModel
-        titleLabel.text = viewModel.title
+        configureInformation()
         configurePosterImage()
         configureBackgroundImage()
     }
@@ -60,8 +62,28 @@ extension IMMovieTableViewCell {
         posterImageView.frame = CGRect(x: 0.0, y: 0.0, width: 92.0, height: 132.0)
         posterImageView.backgroundColor = .clear
         
-        titleLabel.font = UIFont.regularWithSize(size: 17.0)
+        titleLabel.font = UIFont.mediumWithSize(size: 17.0)
         titleLabel.textColor = .white
+        
+        releaseDateLabel.font = UIFont.regularWithSize(size: 14.0)
+        releaseDateLabel.textColor = .white
+        
+        overviewLabel.font = UIFont.regularWithSize(size: 15.0)
+        overviewLabel.textColor = .white
+        overviewLabel.numberOfLines = 0
+    }
+    
+    private func configureInformation() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        titleLabel.text = viewModel.title
+        releaseDateLabel.text = viewModel.releaseDate
+        
+        guard let overview = viewModel.overview else {
+            return
+        }
+        overviewLabel.text = overview
     }
     
     private func configureBackgroundImage() {
@@ -88,6 +110,8 @@ extension IMMovieTableViewCell {
         addSubview(backgroundLayerImageView)
         addSubview(posterImageView)
         addSubview(titleLabel)
+        addSubview(releaseDateLabel)
+        addSubview(overviewLabel)
         
         addConstraintsWithFormat("H:|[v0]|", views: backgroundImageView)
         addConstraintsWithFormat("V:|[v0]|", views: backgroundImageView)
@@ -100,6 +124,12 @@ extension IMMovieTableViewCell {
         
         addConstraintsWithFormat("H:[v0]-16.0-[v1]-16.0-|", views: posterImageView, titleLabel)
         addConstraintsWithFormat("V:|-16.0-[v0(22.0)]", views: titleLabel)
+        
+        addConstraintsWithFormat("H:[v0]-16.0-[v1]-16.0-|", views: posterImageView, releaseDateLabel)
+        addConstraintsWithFormat("V:[v0]-8.0-[v1(17.0)]", views: titleLabel, releaseDateLabel)
+        
+        addConstraintsWithFormat("H:[v0]-16.0-[v1]-16.0-|", views: posterImageView, overviewLabel)
+        addConstraintsWithFormat("V:[v0]-16.0-[v1]-16.0-|", views: releaseDateLabel, overviewLabel)
     }
     
 }

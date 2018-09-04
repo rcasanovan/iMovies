@@ -15,13 +15,17 @@ struct IMMovieViewModel {
     let mediumUrlImage: URL?
     let largeUrlImage: URL?
     let title: String
+    let releaseDate: String
+    let overview: String?
     
-    init(id: UInt, smallUrlImage: URL?, mediumUrlImage: URL?, largeUrlImage: URL?, title: String) {
+    init(id: UInt, smallUrlImage: URL?, mediumUrlImage: URL?, largeUrlImage: URL?, title: String, releaseDate: String, overview: String?) {
         self.id = id
         self.smallUrlImage = smallUrlImage
         self.mediumUrlImage = mediumUrlImage
         self.largeUrlImage = largeUrlImage
         self.title = title
+        self.releaseDate = releaseDate
+        self.overview = overview
     }
     
     public static func getViewModelsWith(movies: [IMSingleMovieResponse]) -> [IMMovieViewModel] {
@@ -32,6 +36,6 @@ struct IMMovieViewModel {
         let smallUrlImage = IMMovieImageManager.getSmalImageUrlWith(movie.poster_path)
         let mediumUrlImage = IMMovieImageManager.getMediumImageUrlWith(movie.poster_path)
         let largeUrlImage = IMMovieImageManager.getLargeImageUrlWith(movie.poster_path)
-        return IMMovieViewModel.init(id: movie.id, smallUrlImage: smallUrlImage, mediumUrlImage: mediumUrlImage, largeUrlImage: largeUrlImage, title: movie.title)
+        return IMMovieViewModel.init(id: movie.id, smallUrlImage: smallUrlImage, mediumUrlImage: mediumUrlImage, largeUrlImage: largeUrlImage, title: movie.title, releaseDate: movie.release_date, overview: movie.overview)
     }
 }

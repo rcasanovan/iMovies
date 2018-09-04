@@ -21,4 +21,5 @@ struct IMSingleMovieResponse: Decodable {
     let poster_path: String?
     let title: String
     let overview: String?
+    let release_date: String
 }
