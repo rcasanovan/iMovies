@@ -11,6 +11,7 @@
 		C80BD9E9213F22BE001B66EB /* IMSuggestionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80BD9E8213F22BE001B66EB /* IMSuggestionsTest.swift */; };
 		C80BD9EC213F2C2C001B66EB /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80BD9EB213F2C2C001B66EB /* Results.swift */; };
 		C80BD9EE213F2C83001B66EB /* IMSuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80BD9ED213F2C83001B66EB /* IMSuggestionsView.swift */; };
+		C80BD9F3213F36EA001B66EB /* IMSuggestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80BD9F2213F36EA001B66EB /* IMSuggestionViewModel.swift */; };
 		C82AD782213DA12A000EF9A4 /* IMSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD781213DA12A000EF9A4 /* IMSearchViewController.swift */; };
 		C82AD786213DA55A000EF9A4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD785213DA55A000EF9A4 /* UIView.swift */; };
 		C82AD78B213DADF9000EF9A4 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD78A213DADF9000EF9A4 /* EndPoint.swift */; };
@@ -71,6 +72,7 @@
 		C80BD9E8213F22BE001B66EB /* IMSuggestionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSuggestionsTest.swift; sourceTree = "<group>"; };
 		C80BD9EB213F2C2C001B66EB /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		C80BD9ED213F2C83001B66EB /* IMSuggestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSuggestionsView.swift; sourceTree = "<group>"; };
+		C80BD9F2213F36EA001B66EB /* IMSuggestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSuggestionViewModel.swift; sourceTree = "<group>"; };
 		C82AD781213DA12A000EF9A4 /* IMSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSearchViewController.swift; sourceTree = "<group>"; };
 		C82AD785213DA55A000EF9A4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C82AD78A213DADF9000EF9A4 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -167,9 +169,26 @@
 		C80BD9EF213F2C87001B66EB /* Suggestions */ = {
 			isa = PBXGroup;
 			children = (
+				C80BD9F0213F36AE001B66EB /* Cell */,
+				C80BD9F1213F36B8001B66EB /* View Model */,
 				C80BD9ED213F2C83001B66EB /* IMSuggestionsView.swift */,
 			);
 			path = Suggestions;
+			sourceTree = "<group>";
+		};
+		C80BD9F0213F36AE001B66EB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C80BD9F1213F36B8001B66EB /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				C80BD9F2213F36EA001B66EB /* IMSuggestionViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		C82AD77F213DA0D4000EF9A4 /* Views */ = {
@@ -647,6 +666,7 @@
 				C82AD7DC213F1CA0000EF9A4 /* IMSearchSuggestion.swift in Sources */,
 				C82AD796213DB20B000EF9A4 /* RequestManager.swift in Sources */,
 				C82AD7D6213ED7C9000EF9A4 /* IMSearchView.swift in Sources */,
+				C80BD9F3213F36EA001B66EB /* IMSuggestionViewModel.swift in Sources */,
 				C82AD78B213DADF9000EF9A4 /* EndPoint.swift in Sources */,
 				C82AD7D0213EA0C6000EF9A4 /* UIFont.swift in Sources */,
 				C80BD9EC213F2C2C001B66EB /* Results.swift in Sources */,
