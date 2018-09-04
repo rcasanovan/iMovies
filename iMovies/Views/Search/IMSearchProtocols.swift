@@ -10,6 +10,7 @@ import Foundation
 
 // View / Presenter
 protocol IMSearchViewInjection : class {
+    func loadMovies(_ movies: [IMMovieViewModel])
 }
 
 protocol IMSearchPresenterDelegate : class {
@@ -18,5 +19,8 @@ protocol IMSearchPresenterDelegate : class {
 
 // Presenter / Interactor
 
+typealias IMGetMoviesCompletionBlock = (Result<IMMoviesResponse?>) -> Void
+
 protocol IMSearchInteractorDelegate : class {
+    func getMoviesWith(movie: String, completion: @escaping IMGetMoviesCompletionBlock)
 }

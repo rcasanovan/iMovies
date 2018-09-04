@@ -10,9 +10,20 @@ import UIKit
 
 class IMSearchViewController: UIViewController {
     
+    public var presenter: IMSearchPresenterDelegate?
+    
+    private var movies: [IMMovieViewModel] = [IMMovieViewModel]() {
+        didSet {
+            
+        }
+    }
+    
+    private var moviesTableView: UITableView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        presenter?.viewDidLoad()
     }
     
 }
@@ -36,6 +47,14 @@ extension IMSearchViewController {
 extension IMSearchViewController {
     
     private func addSubviews() {
+    }
+    
+}
+
+extension IMSearchViewController: IMSearchViewInjection {
+    
+    func loadMovies(_ movies: [IMMovieViewModel]) {
+        print("load movies")
     }
     
 }

@@ -42,6 +42,7 @@ extension AppDelegate  {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         let searchVC = IMSearchViewController()
+        searchVC.presenter = IMSearchPresenter(view: searchVC)
         
         self.window?.rootViewController = searchVC
         self.window?.makeKeyAndVisible()

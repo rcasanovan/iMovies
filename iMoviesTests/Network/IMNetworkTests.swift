@@ -9,8 +9,6 @@
 import XCTest
 @testable import iMovies
 
-typealias IMGetTestMoviesCompletionBlock = (Result<IMMoviesResponse?>) -> Void
-
 class IMNetworkTests: XCTestCase {
     
     private let requestManager = RequestManager()
@@ -23,7 +21,7 @@ class IMNetworkTests: XCTestCase {
         super.tearDown()
     }
     
-    func testGetMoviesWith(movie: String, page: UInt, completion: @escaping IMGetTestMoviesCompletionBlock) {
+    func testGetMoviesWith(movie: String, page: UInt, completion: @escaping IMGetMoviesCompletionBlock) {
         var getMoviesRequest = IMGetMoviesRequest(movie: movie, page: page)
         
         getMoviesRequest.completion = completion
