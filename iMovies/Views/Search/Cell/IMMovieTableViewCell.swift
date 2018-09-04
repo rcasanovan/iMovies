@@ -33,6 +33,7 @@ class IMMovieTableViewCell: UITableViewCell {
     
     public func bindWithViewModel(_ viewModel: IMMovieViewModel) {
         self.viewModel = viewModel
+        titleLabel.text = viewModel.title
         configurePosterImage()
         configureBackgroundImage()
     }
@@ -59,6 +60,8 @@ extension IMMovieTableViewCell {
         posterImageView.frame = CGRect(x: 0.0, y: 0.0, width: 92.0, height: 132.0)
         posterImageView.backgroundColor = .clear
         
+        titleLabel.font = UIFont.regularWithSize(size: 17.0)
+        titleLabel.textColor = .white
     }
     
     private func configureBackgroundImage() {
@@ -84,6 +87,7 @@ extension IMMovieTableViewCell {
         addSubview(backgroundImageView)
         addSubview(backgroundLayerImageView)
         addSubview(posterImageView)
+        addSubview(titleLabel)
         
         addConstraintsWithFormat("H:|[v0]|", views: backgroundImageView)
         addConstraintsWithFormat("V:|[v0]|", views: backgroundImageView)
@@ -93,6 +97,9 @@ extension IMMovieTableViewCell {
         
         addConstraintsWithFormat("H:|-16.0-[v0(92.0)]", views: posterImageView)
         addConstraintsWithFormat("V:|-16.0-[v0(138.0)]-16.0-|", views: posterImageView)
+        
+        addConstraintsWithFormat("H:[v0]-16.0-[v1]-16.0-|", views: posterImageView, titleLabel)
+        addConstraintsWithFormat("V:|-16.0-[v0(22.0)]", views: titleLabel)
     }
     
 }

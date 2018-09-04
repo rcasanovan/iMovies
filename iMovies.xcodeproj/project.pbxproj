@@ -31,6 +31,15 @@
 		C82AD7B6213E8F90000EF9A4 /* IMSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7B5213E8F90000EF9A4 /* IMSearchPresenter.swift */; };
 		C82AD7B8213E9444000EF9A4 /* IMSearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7B7213E9444000EF9A4 /* IMSearchDataSource.swift */; };
 		C82AD7BB213E9501000EF9A4 /* IMMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7BA213E9501000EF9A4 /* IMMovieTableViewCell.swift */; };
+		C82AD7C6213EA085000EF9A4 /* InterUI-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C82AD7BE213EA084000EF9A4 /* InterUI-Bold.ttf */; };
+		C82AD7C7213EA085000EF9A4 /* InterUI-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C82AD7BF213EA084000EF9A4 /* InterUI-Black.ttf */; };
+		C82AD7C8213EA085000EF9A4 /* InterUI-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C82AD7C0213EA084000EF9A4 /* InterUI-MediumItalic.ttf */; };
+		C82AD7C9213EA085000EF9A4 /* InterUI-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C82AD7C1213EA084000EF9A4 /* InterUI-BlackItalic.ttf */; };
+		C82AD7CA213EA085000EF9A4 /* InterUI-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C82AD7C2213EA084000EF9A4 /* InterUI-BoldItalic.ttf */; };
+		C82AD7CB213EA085000EF9A4 /* InterUI-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C82AD7C3213EA084000EF9A4 /* InterUI-Medium.ttf */; };
+		C82AD7CC213EA085000EF9A4 /* InterUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C82AD7C4213EA084000EF9A4 /* InterUI-Regular.ttf */; };
+		C82AD7CD213EA085000EF9A4 /* InterUI-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C82AD7C5213EA084000EF9A4 /* InterUI-Italic.ttf */; };
+		C82AD7D0213EA0C6000EF9A4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7CF213EA0C6000EF9A4 /* UIFont.swift */; };
 		C8C54B83213D9F2500E8C5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */; };
 		C8C54B8A213D9F2600E8C5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */; };
 		C8C54B8D213D9F2600E8C5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B8B213D9F2600E8C5A0 /* LaunchScreen.storyboard */; };
@@ -75,6 +84,15 @@
 		C82AD7B5213E8F90000EF9A4 /* IMSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSearchPresenter.swift; sourceTree = "<group>"; };
 		C82AD7B7213E9444000EF9A4 /* IMSearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSearchDataSource.swift; sourceTree = "<group>"; };
 		C82AD7BA213E9501000EF9A4 /* IMMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMMovieTableViewCell.swift; sourceTree = "<group>"; };
+		C82AD7BE213EA084000EF9A4 /* InterUI-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Bold.ttf"; sourceTree = "<group>"; };
+		C82AD7BF213EA084000EF9A4 /* InterUI-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Black.ttf"; sourceTree = "<group>"; };
+		C82AD7C0213EA084000EF9A4 /* InterUI-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-MediumItalic.ttf"; sourceTree = "<group>"; };
+		C82AD7C1213EA084000EF9A4 /* InterUI-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-BlackItalic.ttf"; sourceTree = "<group>"; };
+		C82AD7C2213EA084000EF9A4 /* InterUI-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C82AD7C3213EA084000EF9A4 /* InterUI-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Medium.ttf"; sourceTree = "<group>"; };
+		C82AD7C4213EA084000EF9A4 /* InterUI-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Regular.ttf"; sourceTree = "<group>"; };
+		C82AD7C5213EA084000EF9A4 /* InterUI-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Italic.ttf"; sourceTree = "<group>"; };
+		C82AD7CF213EA0C6000EF9A4 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		C8C54B7F213D9F2500E8C5A0 /* iMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +159,7 @@
 		C82AD783213DA542000EF9A4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C82AD7CE213EA0BB000EF9A4 /* UIFont */,
 				C82AD784213DA54C000EF9A4 /* UIView */,
 			);
 			path = Extensions;
@@ -244,6 +263,37 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C82AD7BC213EA074000EF9A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD7BD213EA084000EF9A4 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C82AD7BD213EA084000EF9A4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD7BE213EA084000EF9A4 /* InterUI-Bold.ttf */,
+				C82AD7BF213EA084000EF9A4 /* InterUI-Black.ttf */,
+				C82AD7C0213EA084000EF9A4 /* InterUI-MediumItalic.ttf */,
+				C82AD7C1213EA084000EF9A4 /* InterUI-BlackItalic.ttf */,
+				C82AD7C2213EA084000EF9A4 /* InterUI-BoldItalic.ttf */,
+				C82AD7C3213EA084000EF9A4 /* InterUI-Medium.ttf */,
+				C82AD7C4213EA084000EF9A4 /* InterUI-Regular.ttf */,
+				C82AD7C5213EA084000EF9A4 /* InterUI-Italic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C82AD7CE213EA0BB000EF9A4 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD7CF213EA0C6000EF9A4 /* UIFont.swift */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
 		C8C54B76213D9F2400E8C5A0 = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +323,7 @@
 				C82AD7A8213E7013000EF9A4 /* Manager */,
 				C82AD783213DA542000EF9A4 /* Extensions */,
 				C82AD787213DADB3000EF9A4 /* Network */,
+				C82AD7BC213EA074000EF9A4 /* Resources */,
 				C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */,
 				C8C54B8B213D9F2600E8C5A0 /* LaunchScreen.storyboard */,
 				C8C54B8E213D9F2600E8C5A0 /* Info.plist */,
@@ -384,7 +435,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C54B8D213D9F2600E8C5A0 /* LaunchScreen.storyboard in Resources */,
+				C82AD7C9213EA085000EF9A4 /* InterUI-BlackItalic.ttf in Resources */,
+				C82AD7CA213EA085000EF9A4 /* InterUI-BoldItalic.ttf in Resources */,
+				C82AD7CD213EA085000EF9A4 /* InterUI-Italic.ttf in Resources */,
+				C82AD7C6213EA085000EF9A4 /* InterUI-Bold.ttf in Resources */,
+				C82AD7CB213EA085000EF9A4 /* InterUI-Medium.ttf in Resources */,
+				C82AD7C8213EA085000EF9A4 /* InterUI-MediumItalic.ttf in Resources */,
 				C8C54B8A213D9F2600E8C5A0 /* Assets.xcassets in Resources */,
+				C82AD7C7213EA085000EF9A4 /* InterUI-Black.ttf in Resources */,
+				C82AD7CC213EA085000EF9A4 /* InterUI-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +517,7 @@
 				C82AD7BB213E9501000EF9A4 /* IMMovieTableViewCell.swift in Sources */,
 				C82AD796213DB20B000EF9A4 /* RequestManager.swift in Sources */,
 				C82AD78B213DADF9000EF9A4 /* EndPoint.swift in Sources */,
+				C82AD7D0213EA0C6000EF9A4 /* UIFont.swift in Sources */,
 				C8C54B83213D9F2500E8C5A0 /* AppDelegate.swift in Sources */,
 				C82AD798213DB217000EF9A4 /* RequestProtocol.swift in Sources */,
 				C82AD79A213DB226000EF9A4 /* Result.swift in Sources */,
