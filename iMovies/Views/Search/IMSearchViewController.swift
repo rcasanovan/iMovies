@@ -22,6 +22,7 @@ class IMSearchViewController: UIViewController {
     private var moviesContainerView: UIView = UIView()
     private var moviesTableView: UITableView?
     private var datasource: IMSearchDataSource?
+    private var heightAtIndexPath = NSMutableDictionary()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ class IMSearchViewController: UIViewController {
 extension IMSearchViewController {
     
     private func setupViews() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .clear
         
         configureSubviews()
         addSubviews()
@@ -44,8 +45,11 @@ extension IMSearchViewController {
     private func configureSubviews() {
         
         moviesTableView = UITableView(frame: moviesContainerView.bounds, style: .plain)
-        moviesTableView?.delegate = self
         moviesTableView?.tableFooterView = UIView()
+        moviesTableView?.estimatedRowHeight = 170.0
+        moviesTableView?.rowHeight = UITableViewAutomaticDimension
+        moviesTableView?.invalidateIntrinsicContentSize()
+        
         registerCells()
         setupDatasource()
     }
@@ -78,14 +82,6 @@ extension IMSearchViewController {
             moviesContainerView.addConstraintsWithFormat("V:|[v0]|", views: moviesTableView)
         }
 
-    }
-    
-}
-
-extension IMSearchViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170.0
     }
     
 }

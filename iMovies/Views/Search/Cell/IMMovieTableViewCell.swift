@@ -33,6 +33,15 @@ class IMMovieTableViewCell: UITableViewCell {
         setupViews()
     }
     
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        backgroundImageView.image = nil
+        posterImageView.image = nil
+        titleLabel.text = ""
+        releaseDateLabel.text = ""
+        overviewLabel.text = ""
+    }
+        
     public func bindWithViewModel(_ viewModel: IMMovieViewModel) {
         self.viewModel = viewModel
         configureInformation()
@@ -52,10 +61,8 @@ extension IMMovieTableViewCell {
     }
     
     private func configureSubviews() {
-        backgroundImageView.frame = self.frame
+        backgroundImageView.frame = self.bounds
         backgroundImageView.backgroundColor = .clear
-        backgroundImageView.clipsToBounds = true
-        backgroundImageView.contentMode = .scaleAspectFill
         
         backgroundLayerImageView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         
@@ -90,7 +97,16 @@ extension IMMovieTableViewCell {
         guard let url = viewModel?.largeUrlImage else {
             return
         }
-        backgroundImageView.hnk_setImage(from: url, placeholder: nil)
+        backgroundImageView.hnk_setImage(from: url, placeholder: nil, success: { [weak self] (image) in
+            guard let `self` = self else { return }
+
+            self.backgroundImageView.contentMode = .redraw
+            self.backgroundImageView.clipsToBounds = true
+            self.backgroundImageView.image = image
+            
+            
+        }) { (error) in
+        }
     }
     
     private func configurePosterImage() {
@@ -104,6 +120,37 @@ extension IMMovieTableViewCell {
 
 // MARK: - Layout & constraints
 extension IMMovieTableViewCell {
+    
+    private struct Layout {
+        
+        struct PosterImageView {
+            static let height: CGFloat = 138.0
+            static let width: CGFloat = 92.0
+            static let top: CGFloat = 16.0
+            static let leading: CGFloat = 16.0
+        }
+        
+        struct TitleLabel {
+            static let height: CGFloat = 22.0
+            static let top: CGFloat = 16.0
+            static let leading: CGFloat = 16.0
+            static let trailing: CGFloat = 16.0
+        }
+        
+        struct ReleaseDateLabel {
+            static let height: CGFloat = 17.0
+            static let top: CGFloat = 8.0
+            static let leading: CGFloat = 16.0
+            static let trailing: CGFloat = 16.0
+        }
+        
+        struct OverviewLabel {
+            static let top: CGFloat = 8.0
+            static let bottom: CGFloat = 8.0
+            static let leading: CGFloat = 16.0
+            static let trailing: CGFloat = 16.0
+        }
+    }
     
     private func addSubviews() {
         addSubview(backgroundImageView)
@@ -119,17 +166,17 @@ extension IMMovieTableViewCell {
         addConstraintsWithFormat("H:|[v0]|", views: backgroundLayerImageView)
         addConstraintsWithFormat("V:|[v0]|", views: backgroundLayerImageView)
         
-        addConstraintsWithFormat("H:|-16.0-[v0(92.0)]", views: posterImageView)
-        addConstraintsWithFormat("V:|-16.0-[v0(138.0)]-16.0-|", views: posterImageView)
+        addConstraintsWithFormat("H:|-\(Layout.PosterImageView.leading)-[v0(\(Layout.PosterImageView.width))]", views: posterImageView)
+        addConstraintsWithFormat("V:|-\(Layout.PosterImageView.top)-[v0(\(Layout.PosterImageView.height))]->=16.0-|", views: posterImageView)
         
-        addConstraintsWithFormat("H:[v0]-16.0-[v1]-16.0-|", views: posterImageView, titleLabel)
-        addConstraintsWithFormat("V:|-16.0-[v0(22.0)]", views: titleLabel)
+        addConstraintsWithFormat("H:[v0]-\(Layout.TitleLabel.leading)-[v1]-\(Layout.TitleLabel.trailing)-|", views: posterImageView, titleLabel)
+        addConstraintsWithFormat("V:|-\(Layout.TitleLabel.top)-[v0(\(Layout.TitleLabel.height))]", views: titleLabel)
         
-        addConstraintsWithFormat("H:[v0]-16.0-[v1]-16.0-|", views: posterImageView, releaseDateLabel)
-        addConstraintsWithFormat("V:[v0]-8.0-[v1(17.0)]", views: titleLabel, releaseDateLabel)
+        addConstraintsWithFormat("H:[v0]-\(Layout.ReleaseDateLabel.leading)-[v1]-\(Layout.ReleaseDateLabel.trailing)-|", views: posterImageView, releaseDateLabel)
+        addConstraintsWithFormat("V:[v0]-\(Layout.ReleaseDateLabel.top)-[v1(\(Layout.ReleaseDateLabel.height))]", views: titleLabel, releaseDateLabel)
         
-        addConstraintsWithFormat("H:[v0]-16.0-[v1]-16.0-|", views: posterImageView, overviewLabel)
-        addConstraintsWithFormat("V:[v0]-16.0-[v1]-16.0-|", views: releaseDateLabel, overviewLabel)
+        addConstraintsWithFormat("H:[v0]-\(Layout.OverviewLabel.leading)-[v1]-\(Layout.OverviewLabel.trailing)-|", views: posterImageView, overviewLabel)
+        addConstraintsWithFormat("V:[v0]-\(Layout.OverviewLabel.top)-[v1]-\(Layout.OverviewLabel.bottom)-|", views: releaseDateLabel, overviewLabel)
     }
     
 }
