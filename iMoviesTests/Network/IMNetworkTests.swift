@@ -23,17 +23,17 @@ class IMNetworkTests: XCTestCase {
         super.tearDown()
     }
     
-    func getMoviesWith(movie: String, page: UInt, completion: @escaping IMGetTestMoviesCompletionBlock) {
+    func testGetMoviesWith(movie: String, page: UInt, completion: @escaping IMGetTestMoviesCompletionBlock) {
         var getMoviesRequest = IMGetMoviesRequest(movie: movie, page: page)
         
         getMoviesRequest.completion = completion
         requestManager.send(request: getMoviesRequest)
     }
     
-    func getMovie(movie: String) {
+    func testGetMovie(movie: String) {
         let moviesExpectation: XCTestExpectation = self.expectation(description: "movies")
         
-        getMoviesWith(movie: movie, page: 1) { (response) in
+        testGetMoviesWith(movie: movie, page: 1) { (response) in
             switch response {
             case .success(let movies):
                 guard let count = movies?.results.count else {
@@ -55,27 +55,27 @@ class IMNetworkTests: XCTestCase {
     }
     
     func testGetBatmanMovies() {
-        getMovie(movie: "Batman")
+        testGetMovie(movie: "Batman")
     }
     
     func testGetSupermanMovies() {
-        getMovie(movie: "superman")
+        testGetMovie(movie: "superman")
     }
     
     func testGetStarWarsMovies() {
-        getMovie(movie: "Star Wars")
+        testGetMovie(movie: "Star Wars")
     }
     
     func testGetTheLordOfTheRingsMovies() {
-        getMovie(movie: "The Lord of the Rings")
+        testGetMovie(movie: "The Lord of the Rings")
     }
     
     func testGetBackToTheFutureMovies() {
-        getMovie(movie: "back to the future")
+        testGetMovie(movie: "back to the future")
     }
     
     func testGetBackToTheFutureWithWhitespacesMovies() {
-        getMovie(movie: "back   to   the    future")
+        testGetMovie(movie: "back   to   the    future")
     }
     
 }

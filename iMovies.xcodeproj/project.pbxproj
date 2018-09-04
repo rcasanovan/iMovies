@@ -22,10 +22,12 @@
 		C82AD79F213DB447000EF9A4 /* IMGetMoviesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD79E213DB447000EF9A4 /* IMGetMoviesRequest.swift */; };
 		C82AD7A2213DB6E8000EF9A4 /* IMNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7A1213DB6E8000EF9A4 /* IMNetworkTests.swift */; };
 		C82AD7A4213DC398000EF9A4 /* IMMoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7A3213DC398000EF9A4 /* IMMoviesResponse.swift */; };
+		C82AD7A7213E6F31000EF9A4 /* IMMovieImagesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7A6213E6F31000EF9A4 /* IMMovieImagesTest.swift */; };
+		C82AD7AA213E7030000EF9A4 /* IMMovieImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7A9213E7030000EF9A4 /* IMMovieImageManager.swift */; };
+		C82AD7AC213E7CAF000EF9A4 /* IMDownloadImagesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7AB213E7CAF000EF9A4 /* IMDownloadImagesTest.swift */; };
 		C8C54B83213D9F2500E8C5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */; };
 		C8C54B8A213D9F2600E8C5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */; };
 		C8C54B8D213D9F2600E8C5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B8B213D9F2600E8C5A0 /* LaunchScreen.storyboard */; };
-		C8C54B98213D9F2600E8C5A0 /* iMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C54B97213D9F2600E8C5A0 /* iMoviesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,13 +59,16 @@
 		C82AD79E213DB447000EF9A4 /* IMGetMoviesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGetMoviesRequest.swift; sourceTree = "<group>"; };
 		C82AD7A1213DB6E8000EF9A4 /* IMNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMNetworkTests.swift; sourceTree = "<group>"; };
 		C82AD7A3213DC398000EF9A4 /* IMMoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMMoviesResponse.swift; sourceTree = "<group>"; };
+		C82AD7A6213E6F31000EF9A4 /* IMMovieImagesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMMovieImagesTest.swift; sourceTree = "<group>"; };
+		C82AD7A9213E7030000EF9A4 /* IMMovieImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMMovieImageManager.swift; sourceTree = "<group>"; };
+		C82AD7AB213E7CAF000EF9A4 /* IMDownloadImagesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDownloadImagesTest.swift; sourceTree = "<group>"; };
+		C82AD7AD213E7D33000EF9A4 /* iMovies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMovies-Bridging-Header.h"; sourceTree = "<group>"; };
 		C8C54B7F213D9F2500E8C5A0 /* iMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8C54B8C213D9F2600E8C5A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8C54B8E213D9F2600E8C5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C54B93213D9F2600E8C5A0 /* iMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8C54B97213D9F2600E8C5A0 /* iMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMoviesTests.swift; sourceTree = "<group>"; };
 		C8C54B99213D9F2600E8C5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0331BA2DFB2B9E43C2257A2 /* Pods-iMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iMovies/Pods-iMovies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +193,23 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		C82AD7A5213E6F09000EF9A4 /* Movie Images */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD7A6213E6F31000EF9A4 /* IMMovieImagesTest.swift */,
+				C82AD7AB213E7CAF000EF9A4 /* IMDownloadImagesTest.swift */,
+			);
+			path = "Movie Images";
+			sourceTree = "<group>";
+		};
+		C82AD7A8213E7013000EF9A4 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD7A9213E7030000EF9A4 /* IMMovieImageManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		C8C54B76213D9F2400E8C5A0 = {
 			isa = PBXGroup;
 			children = (
@@ -211,8 +233,10 @@
 		C8C54B81213D9F2500E8C5A0 /* iMovies */ = {
 			isa = PBXGroup;
 			children = (
+				C82AD7AD213E7D33000EF9A4 /* iMovies-Bridging-Header.h */,
 				C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */,
 				C82AD77F213DA0D4000EF9A4 /* Views */,
+				C82AD7A8213E7013000EF9A4 /* Manager */,
 				C82AD783213DA542000EF9A4 /* Extensions */,
 				C82AD787213DADB3000EF9A4 /* Network */,
 				C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */,
@@ -225,8 +249,8 @@
 		C8C54B96213D9F2600E8C5A0 /* iMoviesTests */ = {
 			isa = PBXGroup;
 			children = (
+				C82AD7A5213E6F09000EF9A4 /* Movie Images */,
 				C82AD7A0213DB6CA000EF9A4 /* Network */,
-				C8C54B97213D9F2600E8C5A0 /* iMoviesTests.swift */,
 				C8C54B99213D9F2600E8C5A0 /* Info.plist */,
 			);
 			path = iMoviesTests;
@@ -387,6 +411,7 @@
 				C82AD782213DA12A000EF9A4 /* IMSearchViewController.swift in Sources */,
 				C82AD7A4213DC398000EF9A4 /* IMMoviesResponse.swift in Sources */,
 				C82AD792213DB1B7000EF9A4 /* HTTPCode.swift in Sources */,
+				C82AD7AA213E7030000EF9A4 /* IMMovieImageManager.swift in Sources */,
 				C82AD78E213DB130000EF9A4 /* ResultError.swift in Sources */,
 				C82AD786213DA55A000EF9A4 /* UIView.swift in Sources */,
 				C82AD79F213DB447000EF9A4 /* IMGetMoviesRequest.swift in Sources */,
@@ -403,8 +428,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82AD7A7213E6F31000EF9A4 /* IMMovieImagesTest.swift in Sources */,
+				C82AD7AC213E7CAF000EF9A4 /* IMDownloadImagesTest.swift in Sources */,
 				C82AD7A2213DB6E8000EF9A4 /* IMNetworkTests.swift in Sources */,
-				C8C54B98213D9F2600E8C5A0 /* iMoviesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +585,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.careem.iMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iMovies/iMovies-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -579,6 +606,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.careem.iMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iMovies/iMovies-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

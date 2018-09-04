@@ -8,6 +8,15 @@
 		<false/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>tmdb.org</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
 			<key>themoviedb.org</key>
 			<dict>
 				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
