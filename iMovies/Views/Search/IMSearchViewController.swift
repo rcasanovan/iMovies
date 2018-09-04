@@ -52,6 +52,8 @@ extension IMSearchViewController {
     private func configureSubviews() {
         searchView.delegate = self
         
+        suggestionsView.delegate = self
+        
         moviesTableView = UITableView(frame: moviesContainerView.bounds, style: .plain)
         moviesTableView?.tableFooterView = UIView()
         moviesTableView?.estimatedRowHeight = 170.0
@@ -136,6 +138,26 @@ extension IMSearchViewController {
     
 }
 
+extension IMSearchViewController: IMSearchViewDelegate {
+    
+    func searchButtonPressedWithSearch(search: String?) {
+        guard let search = search else {
+            return
+        }
+        presenter?.searchMovie(search)
+    }
+    
+}
+
+extension IMSearchViewController: IMSuggestionsViewDelegate {
+    
+    func suggestionSelectedAt(index: NSInteger) {
+        showSuggestions(show: false, height: 0.0, animated: false)
+        presenter?.suggestionSelectedAt(index: index)
+    }
+    
+}
+
 extension IMSearchViewController: IMSearchViewInjection {
     
     func loadMovies(_ movies: [IMMovieViewModel]) {
@@ -146,15 +168,4 @@ extension IMSearchViewController: IMSearchViewInjection {
         suggestionsView.suggestions = suggestions
     }
     
-}
-
-extension IMSearchViewController: IMSearchViewDelegate {
-    
-    func searchButtonPressedWithSearch(search: String?) {
-        guard let search = search else {
-            return
-        }
-        presenter?.searchMovie(search)
-    }
-
 }

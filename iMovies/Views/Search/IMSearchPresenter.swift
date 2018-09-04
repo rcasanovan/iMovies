@@ -14,6 +14,7 @@ class IMSearchPresenter {
     private let interactor: IMSearchInteractorDelegate
     
     private var movies: [IMMovieViewModel]
+    private var suggestions: [IMSuggestionViewModel] = [IMSuggestionViewModel]()
     
     init(view: IMSearchViewInjection) {
         self.view = view
@@ -65,8 +66,17 @@ extension IMSearchPresenter: IMSearchPresenterDelegate {
     func getSuggestions() {
         interactor.getAllSuggestions { [weak self] (suggestions) in
             guard let `self` = self else { return }
-            self.view?.loadSuggestions(suggestions)
+            self.suggestions = suggestions
+            self.view?.loadSuggestions(self.suggestions)
         }
+    }
+    
+    func suggestionSelectedAt(index: NSInteger) {
+        if index < 0 || index >= suggestions.count {
+            return
+        }
+        let suggestion = self.suggestions[index]
+        searchMovie(suggestion.suggestion)
     }
     
 }

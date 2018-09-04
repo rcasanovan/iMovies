@@ -18,6 +18,7 @@ protocol IMSearchPresenterDelegate : class {
     func viewDidLoad()
     func searchMovie(_ movie: String)
     func getSuggestions()
+    func suggestionSelectedAt(index: NSInteger)
 }
 
 // Presenter / Interactor

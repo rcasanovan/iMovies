@@ -8,7 +8,13 @@
 
 import Foundation
 
+protocol IMSuggestionsViewDelegate {
+    func suggestionSelectedAt(index: NSInteger)
+}
+
 class IMSuggestionsView: UIView {
+    
+    public var delegate: IMSuggestionsViewDelegate?
     
     public var suggestions: [IMSuggestionViewModel] = [IMSuggestionViewModel]() {
         didSet {
@@ -47,6 +53,7 @@ extension IMSuggestionsView {
         suggestionsTableView?.tableFooterView = UIView()
         suggestionsTableView?.estimatedRowHeight = 44.0
         suggestionsTableView?.rowHeight = 44.0
+        suggestionsTableView?.delegate = self
         
         registerCells()
         setupDatasource()
@@ -74,6 +81,14 @@ extension IMSuggestionsView {
             addConstraintsWithFormat("H:|[v0]|", views: suggestionsTableView)
             addConstraintsWithFormat("V:|[v0]|", views: suggestionsTableView)
         }
+    }
+    
+}
+
+extension IMSuggestionsView: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.suggestionSelectedAt(index: indexPath.row)
     }
     
 }
