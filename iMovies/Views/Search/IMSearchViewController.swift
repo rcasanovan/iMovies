@@ -49,6 +49,7 @@ extension IMSearchViewController {
         moviesTableView?.estimatedRowHeight = 170.0
         moviesTableView?.rowHeight = UITableViewAutomaticDimension
         moviesTableView?.invalidateIntrinsicContentSize()
+        moviesTableView?.allowsSelection = false
         
         registerCells()
         setupDatasource()
@@ -81,7 +82,6 @@ extension IMSearchViewController {
             moviesContainerView.addConstraintsWithFormat("H:|[v0]|", views: moviesTableView)
             moviesContainerView.addConstraintsWithFormat("V:|[v0]|", views: moviesTableView)
         }
-
     }
     
 }
