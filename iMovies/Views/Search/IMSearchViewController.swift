@@ -44,9 +44,7 @@ extension IMSearchViewController {
     private func configureSubviews() {
         
         moviesTableView = UITableView(frame: moviesContainerView.bounds, style: .plain)
-        //moviesTableView?.delegate = self
-        moviesTableView?.rowHeight = UITableViewAutomaticDimension
-        moviesTableView?.estimatedRowHeight = 60.0
+        moviesTableView?.delegate = self
         moviesTableView?.tableFooterView = UIView()
         registerCells()
         setupDatasource()
@@ -80,6 +78,14 @@ extension IMSearchViewController {
             moviesContainerView.addConstraintsWithFormat("V:|[v0]|", views: moviesTableView)
         }
 
+    }
+    
+}
+
+extension IMSearchViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 170.0
     }
     
 }

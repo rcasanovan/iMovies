@@ -20,7 +20,7 @@ class IMSearchDataSource: NSObject {
 }
 
 extension IMSearchDataSource: UITableViewDataSource {
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
@@ -29,6 +29,9 @@ extension IMSearchDataSource: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: IMMovieTableViewCell.identifier, for: indexPath) as? IMMovieTableViewCell else {
             return UITableViewCell()
         }
+        
+        let viewModel = movies[indexPath.row]
+        cell.bindWithViewModel(viewModel)
         
         return cell
     }
