@@ -44,12 +44,21 @@ extension IMSearchPresenter {
         }
     }
     
+    private func clearSearch() {
+        movies = []
+    }
+    
 }
 
 extension IMSearchPresenter: IMSearchPresenterDelegate {
     
     func viewDidLoad() {
         getMoviesWithMovie("omen")
+    }
+    
+    func searchMovie(_ movie: String) {
+        clearSearch()
+        getMoviesWithMovie(movie)
     }
     
 }

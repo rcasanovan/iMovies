@@ -47,6 +47,8 @@ extension IMSearchViewController {
     }
 
     private func configureSubviews() {
+        searchView.delegate = self
+        
         moviesTableView = UITableView(frame: moviesContainerView.bounds, style: .plain)
         moviesTableView?.tableFooterView = UIView()
         moviesTableView?.estimatedRowHeight = 170.0
@@ -99,4 +101,15 @@ extension IMSearchViewController: IMSearchViewInjection {
         self.movies = movies
     }
     
+}
+
+extension IMSearchViewController: IMSearchViewDelegate {
+    
+    func searchButtonPressedWithSearch(search: String?) {
+        guard let search = search else {
+            return
+        }
+        presenter?.searchMovie(search)
+    }
+
 }

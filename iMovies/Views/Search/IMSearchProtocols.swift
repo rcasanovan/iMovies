@@ -15,6 +15,7 @@ protocol IMSearchViewInjection : class {
 
 protocol IMSearchPresenterDelegate : class {
     func viewDidLoad()
+    func searchMovie(_ movie: String)
 }
 
 // Presenter / Interactor
