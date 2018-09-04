@@ -52,7 +52,9 @@ extension IMSearchView {
     
     private func configureSubviews() {
         searchContainerView.backgroundColor = .clear
-        
+
+        searchBar.backgroundColor = .clear
+        searchBar.barTintColor = .clear
         searchBar.delegate = self
         
         cancelButton.setBackgroundImage(UIImage(named: "CancelButton"), for: .normal)
