@@ -89,6 +89,7 @@ extension IMSearchViewController {
         guard let info:[AnyHashable:Any] = notification.userInfo,
             let keyboardSize:CGSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size else { return }
         
+        suggestionsView.suggestions = IMSuggestionViewModel.getDemoViewModels()
         showSuggestions(show: true, height: -keyboardSize.height, animated: true)
     }
     

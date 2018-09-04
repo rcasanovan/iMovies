@@ -12,8 +12,6 @@ class IMSuggestionTableViewCell: UITableViewCell {
     
     private var suggestionLabel: UILabel = UILabel()
     
-    private var viewModel: IMSuggestionViewModel?
-    
     static public var identifier: String {
         return String(describing: self)
     }
@@ -34,7 +32,7 @@ class IMSuggestionTableViewCell: UITableViewCell {
     }
     
     public func bindWithViewModel(_ viewModel: IMSuggestionViewModel) {
-        self.viewModel = viewModel
+        suggestionLabel.text = viewModel.suggestion
     }
 }
 
@@ -50,7 +48,7 @@ extension IMSuggestionTableViewCell {
     
     private func configureSubviews() {
         suggestionLabel.font = UIFont.mediumWithSize(size: 17.0)
-        suggestionLabel.textColor = .white
+        suggestionLabel.textColor = .black
         suggestionLabel.numberOfLines = 1
         suggestionLabel.backgroundColor = .clear
     }
@@ -63,7 +61,7 @@ extension IMSuggestionTableViewCell {
     private func addSubviews() {
         addSubview(suggestionLabel)
         
-        addConstraintsWithFormat("H:|[v0]|", views: suggestionLabel)
+        addConstraintsWithFormat("H:|-16.0-[v0]-16.0-|", views: suggestionLabel)
         addConstraintsWithFormat("V:|[v0]|", views: suggestionLabel)
     }
     

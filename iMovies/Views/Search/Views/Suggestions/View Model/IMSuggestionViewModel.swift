@@ -28,6 +28,20 @@ struct IMSuggestionViewModel {
         var suggestions: [IMSuggestionViewModel] = [IMSuggestionViewModel]()
         suggestions.append(IMSuggestionViewModel(suggestion: "batman"))
         suggestions.append(IMSuggestionViewModel(suggestion: "superman"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "star wars"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "back to the future"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "batman"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "superman"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "star wars"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "back to the future"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "batman"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "superman"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "star wars"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "back to the future"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "batman"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "superman"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "star wars"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "back to the future"))
         return suggestions
     }
     
