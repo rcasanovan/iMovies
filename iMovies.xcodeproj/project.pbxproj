@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11F1C77A0B50259993134249 /* libPods-iMoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B79E71ACF5F54761D180B64D /* libPods-iMoviesTests.a */; };
-		B15A02DB1F1699BF8CAFD731 /* libPods-iMovies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B410692AFE4604063886338C /* libPods-iMovies.a */; };
+		BF9459150294B85421BBB015 /* Pods_iMoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5565C2F13912B931586FFAC7 /* Pods_iMoviesTests.framework */; };
+		C80BD9E9213F22BE001B66EB /* IMSuggestionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80BD9E8213F22BE001B66EB /* IMSuggestionsTest.swift */; };
 		C82AD782213DA12A000EF9A4 /* IMSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD781213DA12A000EF9A4 /* IMSearchViewController.swift */; };
 		C82AD786213DA55A000EF9A4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD785213DA55A000EF9A4 /* UIView.swift */; };
 		C82AD78B213DADF9000EF9A4 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD78A213DADF9000EF9A4 /* EndPoint.swift */; };
@@ -42,9 +42,12 @@
 		C82AD7D0213EA0C6000EF9A4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7CF213EA0C6000EF9A4 /* UIFont.swift */; };
 		C82AD7D3213EAF50000EF9A4 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7D2213EAF50000EF9A4 /* UILabel.swift */; };
 		C82AD7D6213ED7C9000EF9A4 /* IMSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7D5213ED7C9000EF9A4 /* IMSearchView.swift */; };
+		C82AD7D9213F1C60000EF9A4 /* IMSearchSuggestionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7D8213F1C60000EF9A4 /* IMSearchSuggestionsManager.swift */; };
+		C82AD7DC213F1CA0000EF9A4 /* IMSearchSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7DB213F1CA0000EF9A4 /* IMSearchSuggestion.swift */; };
 		C8C54B83213D9F2500E8C5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */; };
 		C8C54B8A213D9F2600E8C5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */; };
 		C8C54B8D213D9F2600E8C5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B8B213D9F2600E8C5A0 /* LaunchScreen.storyboard */; };
+		C8DF0BB7DB4CC03C507E8671 /* Pods_iMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB7296C6701111E1B70B78 /* Pods_iMovies.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +62,11 @@
 
 /* Begin PBXFileReference section */
 		0153EB52AF137A0289902E5C /* Pods-iMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMovies.release.xcconfig"; path = "Pods/Target Support Files/Pods-iMovies/Pods-iMovies.release.xcconfig"; sourceTree = "<group>"; };
+		5565C2F13912B931586FFAC7 /* Pods_iMoviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMoviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73EB7296C6701111E1B70B78 /* Pods_iMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7631A82C09F8DA847EBA1F94 /* Pods-iMoviesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMoviesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iMoviesTests/Pods-iMoviesTests.release.xcconfig"; sourceTree = "<group>"; };
 		86835C74085F076D13B3E165 /* Pods-iMoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMoviesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iMoviesTests/Pods-iMoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B410692AFE4604063886338C /* libPods-iMovies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iMovies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B79E71ACF5F54761D180B64D /* libPods-iMoviesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iMoviesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80BD9E8213F22BE001B66EB /* IMSuggestionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSuggestionsTest.swift; sourceTree = "<group>"; };
 		C82AD781213DA12A000EF9A4 /* IMSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSearchViewController.swift; sourceTree = "<group>"; };
 		C82AD785213DA55A000EF9A4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C82AD78A213DADF9000EF9A4 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 		C82AD7CF213EA0C6000EF9A4 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		C82AD7D2213EAF50000EF9A4 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		C82AD7D5213ED7C9000EF9A4 /* IMSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSearchView.swift; sourceTree = "<group>"; };
+		C82AD7D8213F1C60000EF9A4 /* IMSearchSuggestionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSearchSuggestionsManager.swift; sourceTree = "<group>"; };
+		C82AD7DB213F1CA0000EF9A4 /* IMSearchSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSearchSuggestion.swift; sourceTree = "<group>"; };
 		C8C54B7F213D9F2500E8C5A0 /* iMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B15A02DB1F1699BF8CAFD731 /* libPods-iMovies.a in Frameworks */,
+				C8DF0BB7DB4CC03C507E8671 /* Pods_iMovies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11F1C77A0B50259993134249 /* libPods-iMoviesTests.a in Frameworks */,
+				BF9459150294B85421BBB015 /* Pods_iMoviesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +142,14 @@
 				7631A82C09F8DA847EBA1F94 /* Pods-iMoviesTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C80BD9E7213F22A3001B66EB /* Suggestions */ = {
+			isa = PBXGroup;
+			children = (
+				C80BD9E8213F22BE001B66EB /* IMSuggestionsTest.swift */,
+			);
+			path = Suggestions;
 			sourceTree = "<group>";
 		};
 		C82AD77F213DA0D4000EF9A4 /* Views */ = {
@@ -248,6 +262,7 @@
 		C82AD7A8213E7013000EF9A4 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C82AD7D7213F1C27000EF9A4 /* Search Suggestions */,
 				C82AD7A9213E7030000EF9A4 /* IMMovieImageManager.swift */,
 			);
 			path = Manager;
@@ -316,6 +331,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C82AD7D7213F1C27000EF9A4 /* Search Suggestions */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD7DA213F1C83000EF9A4 /* Data Models */,
+				C82AD7D8213F1C60000EF9A4 /* IMSearchSuggestionsManager.swift */,
+			);
+			path = "Search Suggestions";
+			sourceTree = "<group>";
+		};
+		C82AD7DA213F1C83000EF9A4 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD7DB213F1CA0000EF9A4 /* IMSearchSuggestion.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
 		C8C54B76213D9F2400E8C5A0 = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +388,7 @@
 		C8C54B96213D9F2600E8C5A0 /* iMoviesTests */ = {
 			isa = PBXGroup;
 			children = (
+				C80BD9E7213F22A3001B66EB /* Suggestions */,
 				C82AD7A5213E6F09000EF9A4 /* Movie Images */,
 				C82AD7A0213DB6CA000EF9A4 /* Network */,
 				C8C54B99213D9F2600E8C5A0 /* Info.plist */,
@@ -366,8 +399,8 @@
 		F6C905871826AEED4C2B8B07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B410692AFE4604063886338C /* libPods-iMovies.a */,
-				B79E71ACF5F54761D180B64D /* libPods-iMoviesTests.a */,
+				73EB7296C6701111E1B70B78 /* Pods_iMovies.framework */,
+				5565C2F13912B931586FFAC7 /* Pods_iMoviesTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -383,6 +416,7 @@
 				C8C54B7B213D9F2500E8C5A0 /* Sources */,
 				C8C54B7C213D9F2500E8C5A0 /* Frameworks */,
 				C8C54B7D213D9F2500E8C5A0 /* Resources */,
+				B13E01CC9C26903E5C1D8A08 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,6 +435,7 @@
 				C8C54B8F213D9F2600E8C5A0 /* Sources */,
 				C8C54B90213D9F2600E8C5A0 /* Frameworks */,
 				C8C54B91213D9F2600E8C5A0 /* Resources */,
+				853181290482E34DEF4F476E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -515,6 +550,54 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		853181290482E34DEF4F476E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iMoviesTests/Pods-iMoviesTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FXReachability/FXReachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Haneke/Haneke.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXReachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iMoviesTests/Pods-iMoviesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B13E01CC9C26903E5C1D8A08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iMovies/Pods-iMovies-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FXReachability/FXReachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Haneke/Haneke.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXReachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iMovies/Pods-iMovies-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -525,6 +608,7 @@
 				C82AD790213DB194000EF9A4 /* IMRequestErrors.swift in Sources */,
 				C82AD782213DA12A000EF9A4 /* IMSearchViewController.swift in Sources */,
 				C82AD7B6213E8F90000EF9A4 /* IMSearchPresenter.swift in Sources */,
+				C82AD7D9213F1C60000EF9A4 /* IMSearchSuggestionsManager.swift in Sources */,
 				C82AD7A4213DC398000EF9A4 /* IMMoviesResponse.swift in Sources */,
 				C82AD7B2213E8C11000EF9A4 /* IMMovieViewModel.swift in Sources */,
 				C82AD792213DB1B7000EF9A4 /* HTTPCode.swift in Sources */,
@@ -538,6 +622,7 @@
 				C82AD794213DB1CF000EF9A4 /* NetworkHeaders.swift in Sources */,
 				C82AD7D3213EAF50000EF9A4 /* UILabel.swift in Sources */,
 				C82AD7BB213E9501000EF9A4 /* IMMovieTableViewCell.swift in Sources */,
+				C82AD7DC213F1CA0000EF9A4 /* IMSearchSuggestion.swift in Sources */,
 				C82AD796213DB20B000EF9A4 /* RequestManager.swift in Sources */,
 				C82AD7D6213ED7C9000EF9A4 /* IMSearchView.swift in Sources */,
 				C82AD78B213DADF9000EF9A4 /* EndPoint.swift in Sources */,
@@ -555,6 +640,7 @@
 				C82AD7A7213E6F31000EF9A4 /* IMMovieImagesTest.swift in Sources */,
 				C82AD7AC213E7CAF000EF9A4 /* IMDownloadImagesTest.swift in Sources */,
 				C82AD7A2213DB6E8000EF9A4 /* IMNetworkTests.swift in Sources */,
+				C80BD9E9213F22BE001B66EB /* IMSuggestionsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '9.0'
-#use_frameworks!
+use_frameworks!
 inhibit_all_warnings!
 
 #link_with 'iMovies', 'iMoviesTests'
@@ -10,6 +10,9 @@ inhibit_all_warnings!
 def iMoviesPods
     #Images
     pod 'Haneke', '~> 1.0'
+    
+    #Plist wrapper
+    pod 'RealmSwift', '~> 3.7.6'
     
     #networking
     pod 'FXReachability', '~> 1.3.2'
