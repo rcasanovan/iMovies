@@ -22,27 +22,32 @@ class IMMovieImageManager {
     }
     
     public static func getSmalImageUrlWith(_ partialUrl: String) -> URL? {
-        var components = URLComponents()
-        components.scheme = "http"
-        components.host = Url.host
+        var components = getURLComponents()
         components.path = Url.path + Url.ImageSize.small + partialUrl
         return components.url
     }
     
     public static func getMediumImageUrlWith(_ partialUrl: String) -> URL? {
-        var components = URLComponents()
-        components.scheme = "http"
-        components.host = Url.host
+        var components = getURLComponents()
         components.path = Url.path + Url.ImageSize.medium + partialUrl
         return components.url
     }
     
     public static func getLargeImageUrlWith(_ partialUrl: String) -> URL? {
+        var components = getURLComponents()
+        components.path = Url.path + Url.ImageSize.large + partialUrl
+        return components.url
+    }
+    
+}
+
+extension IMMovieImageManager {
+    
+    private static func getURLComponents() -> URLComponents {
         var components = URLComponents()
         components.scheme = "http"
         components.host = Url.host
-        components.path = Url.path + Url.ImageSize.large + partialUrl
-        return components.url
+        return components
     }
     
 }
