@@ -43,7 +43,7 @@ class IMSearchViewController: UIViewController {
 extension IMSearchViewController {
     
     private func setupViews() {
-        view.backgroundColor = .clear
+        view.backgroundColor = .black
         
         configureSubviews()
         addSubviews()
@@ -60,6 +60,7 @@ extension IMSearchViewController {
         moviesTableView?.rowHeight = UITableViewAutomaticDimension
         moviesTableView?.invalidateIntrinsicContentSize()
         moviesTableView?.allowsSelection = false
+        moviesTableView?.backgroundColor = .black
         
         registerCells()
         setupDatasource()
