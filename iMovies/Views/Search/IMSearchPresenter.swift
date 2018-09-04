@@ -58,7 +58,15 @@ extension IMSearchPresenter: IMSearchPresenterDelegate {
     
     func searchMovie(_ movie: String) {
         clearSearch()
+        interactor.saveSearch(movie)
         getMoviesWithMovie(movie)
+    }
+    
+    func getSuggestions() {
+        interactor.getAllSuggestions { [weak self] (suggestions) in
+            guard let `self` = self else { return }
+            self.view?.loadSuggestions(suggestions)
+        }
     }
     
 }

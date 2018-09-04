@@ -11,17 +11,22 @@ import Foundation
 // View / Presenter
 protocol IMSearchViewInjection : class {
     func loadMovies(_ movies: [IMMovieViewModel])
+    func loadSuggestions(_ suggestions: [IMSuggestionViewModel])
 }
 
 protocol IMSearchPresenterDelegate : class {
     func viewDidLoad()
     func searchMovie(_ movie: String)
+    func getSuggestions()
 }
 
 // Presenter / Interactor
 
 typealias IMGetMoviesCompletionBlock = (Result<IMMoviesResponse?>) -> Void
+typealias IMGetSuggestionsCompletionBlock = ([IMSuggestionViewModel]) -> Void
 
 protocol IMSearchInteractorDelegate : class {
     func getMoviesWith(movie: String, completion: @escaping IMGetMoviesCompletionBlock)
+    func saveSearch(_ search: String)
+    func getAllSuggestions(completion: @escaping IMGetSuggestionsCompletionBlock)
 }

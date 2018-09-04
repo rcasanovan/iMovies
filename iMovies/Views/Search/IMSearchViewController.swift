@@ -88,8 +88,7 @@ extension IMSearchViewController {
     @objc private func keyboardWillBeAppear(notification: NSNotification) {
         guard let info:[AnyHashable:Any] = notification.userInfo,
             let keyboardSize:CGSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size else { return }
-        
-        suggestionsView.suggestions = IMSuggestionViewModel.getDemoViewModels()
+        presenter?.getSuggestions()
         showSuggestions(show: true, height: -keyboardSize.height, animated: true)
     }
     
@@ -141,6 +140,10 @@ extension IMSearchViewController: IMSearchViewInjection {
     
     func loadMovies(_ movies: [IMMovieViewModel]) {
         self.movies = movies
+    }
+    
+    func loadSuggestions(_ suggestions: [IMSuggestionViewModel]) {
+        suggestionsView.suggestions = suggestions
     }
     
 }

@@ -28,4 +28,13 @@ extension IMSearchInteractor: IMSearchInteractorDelegate {
         requestManager.send(request: getMoviesRequest)
     }
     
+    func saveSearch(_ search: String) {
+        IMSearchSuggestionsManager.saveSuggestion(search)
+    }
+    
+    func getAllSuggestions(completion: @escaping IMGetSuggestionsCompletionBlock) {
+        let suggestions = IMSearchSuggestionsManager.getSuggestions()
+        completion(IMSuggestionViewModel.getViewModelsWith(suggestions: suggestions))
+    }
+    
 }
