@@ -33,7 +33,7 @@ class IMNetworkTests: XCTestCase {
     func getMovie(movie: String) {
         let moviesExpectation: XCTestExpectation = self.expectation(description: "movies")
         
-        getMoviesWith(movie: "batman", page: 1) { (response) in
+        getMoviesWith(movie: movie, page: 1) { (response) in
             switch response {
             case .success(let movies):
                 guard let count = movies?.results.count else {
@@ -67,7 +67,15 @@ class IMNetworkTests: XCTestCase {
     }
     
     func testGetTheLordOfTheRingsMovies() {
-        getMovie(movie: "The Lord of")
+        getMovie(movie: "The Lord of the Rings")
+    }
+    
+    func testGetBackToTheFutureMovies() {
+        getMovie(movie: "back to the future")
+    }
+    
+    func testGetBackToTheFutureWithWhitespacesMovies() {
+        getMovie(movie: "back   to   the    future")
     }
     
 }

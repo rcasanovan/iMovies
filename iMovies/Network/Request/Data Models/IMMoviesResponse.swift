@@ -14,6 +14,6 @@ struct IMMoviesResponse: Decodable {
 
 struct IMSingleMovieResponse: Decodable {
     let id: UInt
-    let poster_path: String
+    let poster_path: String?
     let title: String
 }
