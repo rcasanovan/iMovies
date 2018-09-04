@@ -23,9 +23,12 @@ class IMSearchViewController: UIViewController {
     private let moviesContainerView: UIView = UIView()
     private var moviesTableView: UITableView?
     private var datasource: IMSearchDataSource?
+    private let suggestionsView = IMSuggestionsView()
+    private var suggestionsViewBottomConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addObservers()
         setupViews()
         presenter?.viewDidLoad()
     }
@@ -58,6 +61,8 @@ extension IMSearchViewController {
         
         registerCells()
         setupDatasource()
+        
+        showSuggestions(show: false, height: 0.0, animated: false)
     }
     
     private func registerCells() {
@@ -71,6 +76,26 @@ extension IMSearchViewController {
         }
     }
     
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeAppear), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+}
+
+extension IMSearchViewController {
+    
+    @objc private func keyboardWillBeAppear(notification: NSNotification) {
+        guard let info:[AnyHashable:Any] = notification.userInfo,
+            let keyboardSize:CGSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size else { return }
+        
+        showSuggestions(show: true, height: -keyboardSize.height, animated: true)
+    }
+    
+    @objc private func keyboardWillBeHidden(notification: NSNotification) {
+        showSuggestions(show: false, height: 0.0, animated: true)
+    }
+    
 }
 
 // MARK: - Layout & constraints
@@ -79,6 +104,7 @@ extension IMSearchViewController {
     private func addSubviews() {
         view.addSubview(searchView)
         view.addSubview(moviesContainerView)
+        view.addSubview(suggestionsView)
         
         view.addConstraintsWithFormat("H:|[v0]|", views: searchView)
         view.addConstraintsWithFormat("V:|[v0(\(searchView.getHeight()))]", views: searchView)
@@ -90,6 +116,21 @@ extension IMSearchViewController {
             moviesContainerView.addSubview(moviesTableView)
             moviesContainerView.addConstraintsWithFormat("H:|[v0]|", views: moviesTableView)
             moviesContainerView.addConstraintsWithFormat("V:|[v0]|", views: moviesTableView)
+        }
+        
+        view.addConstraintsWithFormat("H:|[v0]|", views: suggestionsView)
+        view.addConstraintsWithFormat("V:|[v0][v1]", views: searchView, suggestionsView)
+        let suggestionsViewBottomConstraint = NSLayoutConstraint(item: suggestionsView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+        view.addConstraint(suggestionsViewBottomConstraint)
+        self.suggestionsViewBottomConstraint = suggestionsViewBottomConstraint
+    }
+    
+    private func showSuggestions(show: Bool, height: CGFloat, animated: Bool) {
+        let animateDuration = animated ? 0.25 : 0;
+        suggestionsViewBottomConstraint?.constant = height
+        suggestionsView.isHidden = !show
+        UIView.animate(withDuration: animateDuration) {
+            self.view.layoutIfNeeded()
         }
     }
     
