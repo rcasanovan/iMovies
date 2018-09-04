@@ -41,6 +41,7 @@
 		C82AD7CD213EA085000EF9A4 /* InterUI-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C82AD7C5213EA084000EF9A4 /* InterUI-Italic.ttf */; };
 		C82AD7D0213EA0C6000EF9A4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7CF213EA0C6000EF9A4 /* UIFont.swift */; };
 		C82AD7D3213EAF50000EF9A4 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7D2213EAF50000EF9A4 /* UILabel.swift */; };
+		C82AD7D6213ED7C9000EF9A4 /* IMSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82AD7D5213ED7C9000EF9A4 /* IMSearchView.swift */; };
 		C8C54B83213D9F2500E8C5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */; };
 		C8C54B8A213D9F2600E8C5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */; };
 		C8C54B8D213D9F2600E8C5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B8B213D9F2600E8C5A0 /* LaunchScreen.storyboard */; };
@@ -95,6 +96,7 @@
 		C82AD7C5213EA084000EF9A4 /* InterUI-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterUI-Italic.ttf"; sourceTree = "<group>"; };
 		C82AD7CF213EA0C6000EF9A4 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		C82AD7D2213EAF50000EF9A4 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		C82AD7D5213ED7C9000EF9A4 /* IMSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSearchView.swift; sourceTree = "<group>"; };
 		C8C54B7F213D9F2500E8C5A0 /* iMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		C82AD780213DA0EF000EF9A4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				C82AD7D4213ED7AA000EF9A4 /* Views */,
 				C82AD7B9213E94E9000EF9A4 /* Cell */,
 				C82AD7B0213E8BF2000EF9A4 /* View Model */,
 				C82AD7AE213E89EE000EF9A4 /* IMSearchProtocols.swift */,
@@ -303,6 +306,14 @@
 				C82AD7D2213EAF50000EF9A4 /* UILabel.swift */,
 			);
 			path = UILabel;
+			sourceTree = "<group>";
+		};
+		C82AD7D4213ED7AA000EF9A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C82AD7D5213ED7C9000EF9A4 /* IMSearchView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C8C54B76213D9F2400E8C5A0 = {
@@ -528,6 +539,7 @@
 				C82AD7D3213EAF50000EF9A4 /* UILabel.swift in Sources */,
 				C82AD7BB213E9501000EF9A4 /* IMMovieTableViewCell.swift in Sources */,
 				C82AD796213DB20B000EF9A4 /* RequestManager.swift in Sources */,
+				C82AD7D6213ED7C9000EF9A4 /* IMSearchView.swift in Sources */,
 				C82AD78B213DADF9000EF9A4 /* EndPoint.swift in Sources */,
 				C82AD7D0213EA0C6000EF9A4 /* UIFont.swift in Sources */,
 				C8C54B83213D9F2500E8C5A0 /* AppDelegate.swift in Sources */,

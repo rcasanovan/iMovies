@@ -74,6 +74,9 @@ extension IMMovieTableViewCell {
         
         titleLabel.font = UIFont.mediumWithSize(size: 17.0)
         titleLabel.textColor = .white
+        titleLabel.numberOfLines = 0
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.backgroundColor = .clear
         
         releaseDateLabel.font = UIFont.regularWithSize(size: 14.0)
         releaseDateLabel.textColor = .white
@@ -106,8 +109,6 @@ extension IMMovieTableViewCell {
             self.backgroundImageView.contentMode = .redraw
             self.backgroundImageView.clipsToBounds = true
             self.backgroundImageView.image = image
-            
-            
         }) { (error) in
         }
     }
@@ -134,7 +135,7 @@ extension IMMovieTableViewCell {
         }
         
         struct TitleLabel {
-            static let height: CGFloat = 22.0
+            static let height: CGFloat = 45.0
             static let top: CGFloat = 16.0
             static let leading: CGFloat = 16.0
             static let trailing: CGFloat = 16.0

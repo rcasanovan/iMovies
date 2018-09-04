@@ -19,15 +19,19 @@ class IMSearchViewController: UIViewController {
         }
     }
     
-    private var moviesContainerView: UIView = UIView()
+    private let searchView: IMSearchView = IMSearchView()
+    private let moviesContainerView: UIView = UIView()
     private var moviesTableView: UITableView?
     private var datasource: IMSearchDataSource?
-    private var heightAtIndexPath = NSMutableDictionary()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         presenter?.viewDidLoad()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
 }
@@ -41,9 +45,8 @@ extension IMSearchViewController {
         configureSubviews()
         addSubviews()
     }
-    
+
     private func configureSubviews() {
-        
         moviesTableView = UITableView(frame: moviesContainerView.bounds, style: .plain)
         moviesTableView?.tableFooterView = UIView()
         moviesTableView?.estimatedRowHeight = 170.0
@@ -72,10 +75,14 @@ extension IMSearchViewController {
 extension IMSearchViewController {
     
     private func addSubviews() {
+        view.addSubview(searchView)
         view.addSubview(moviesContainerView)
         
+        view.addConstraintsWithFormat("H:|[v0]|", views: searchView)
+        view.addConstraintsWithFormat("V:|[v0(\(searchView.getHeight()))]", views: searchView)
+        
         view.addConstraintsWithFormat("H:|[v0]|", views: moviesContainerView)
-        view.addConstraintsWithFormat("V:|[v0]|", views: moviesContainerView)
+        view.addConstraintsWithFormat("V:|[v0][v1]|", views: searchView, moviesContainerView)
         
         if let moviesTableView = moviesTableView {
             moviesContainerView.addSubview(moviesTableView)

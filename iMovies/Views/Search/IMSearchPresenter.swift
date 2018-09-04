@@ -49,7 +49,7 @@ extension IMSearchPresenter {
 extension IMSearchPresenter: IMSearchPresenterDelegate {
     
     func viewDidLoad() {
-        getMoviesWithMovie("back to the future")
+        getMoviesWithMovie("omen")
     }
     
 }
