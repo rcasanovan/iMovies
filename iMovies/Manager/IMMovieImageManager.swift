@@ -21,19 +21,31 @@ class IMMovieImageManager {
         }
     }
     
-    public static func getSmalImageUrlWith(_ partialUrl: String) -> URL? {
+    public static func getSmalImageUrlWith(_ partialUrl: String?) -> URL? {
+        guard let partialUrl = partialUrl else {
+            return nil
+        }
+        
         var components = getURLComponents()
         components.path = Url.path + Url.ImageSize.small + partialUrl
         return components.url
     }
     
-    public static func getMediumImageUrlWith(_ partialUrl: String) -> URL? {
+    public static func getMediumImageUrlWith(_ partialUrl: String?) -> URL? {
+        guard let partialUrl = partialUrl else {
+            return nil
+        }
+        
         var components = getURLComponents()
         components.path = Url.path + Url.ImageSize.medium + partialUrl
         return components.url
     }
     
-    public static func getLargeImageUrlWith(_ partialUrl: String) -> URL? {
+    public static func getLargeImageUrlWith(_ partialUrl: String?) -> URL? {
+        guard let partialUrl = partialUrl else {
+            return nil
+        }
+        
         var components = getURLComponents()
         components.path = Url.path + Url.ImageSize.large + partialUrl
         return components.url
