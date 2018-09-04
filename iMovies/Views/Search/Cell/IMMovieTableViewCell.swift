@@ -11,7 +11,7 @@ import Foundation
 class IMMovieTableViewCell: UITableViewCell {
     
     private var backgroundImageView: UIImageView = UIImageView()
-    private var backgroundLayerImageView: UIImageView = UIImageView()
+    private var backgroundLayerImageView: UIVisualEffectView?
     private var posterImageView: UIImageView = UIImageView()
     private var titleLabel: UILabel = UILabel()
     private var releaseDateLabel: UILabel = UILabel()
@@ -64,7 +64,10 @@ extension IMMovieTableViewCell {
         backgroundImageView.frame = self.bounds
         backgroundImageView.backgroundColor = .clear
         
-        backgroundLayerImageView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        backgroundLayerImageView = UIVisualEffectView(effect: blurEffect)
+        backgroundLayerImageView?.frame = self.bounds
+        backgroundLayerImageView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         posterImageView.frame = CGRect(x: 0.0, y: 0.0, width: 92.0, height: 132.0)
         posterImageView.backgroundColor = .clear
@@ -154,7 +157,13 @@ extension IMMovieTableViewCell {
     
     private func addSubviews() {
         addSubview(backgroundImageView)
-        addSubview(backgroundLayerImageView)
+        
+        if let backgroundLayerImageView = backgroundLayerImageView {
+            addSubview(backgroundLayerImageView)
+            addConstraintsWithFormat("H:|[v0]|", views: backgroundLayerImageView)
+            addConstraintsWithFormat("V:|[v0]|", views: backgroundLayerImageView)
+        }
+        
         addSubview(posterImageView)
         addSubview(titleLabel)
         addSubview(releaseDateLabel)
@@ -162,9 +171,6 @@ extension IMMovieTableViewCell {
         
         addConstraintsWithFormat("H:|[v0]|", views: backgroundImageView)
         addConstraintsWithFormat("V:|[v0]|", views: backgroundImageView)
-        
-        addConstraintsWithFormat("H:|[v0]|", views: backgroundLayerImageView)
-        addConstraintsWithFormat("V:|[v0]|", views: backgroundLayerImageView)
         
         addConstraintsWithFormat("H:|-\(Layout.PosterImageView.leading)-[v0(\(Layout.PosterImageView.width))]", views: posterImageView)
         addConstraintsWithFormat("V:|-\(Layout.PosterImageView.top)-[v0(\(Layout.PosterImageView.height))]->=16.0-|", views: posterImageView)
