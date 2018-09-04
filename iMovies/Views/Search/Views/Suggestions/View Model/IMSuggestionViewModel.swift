@@ -24,4 +24,11 @@ struct IMSuggestionViewModel {
         return IMSuggestionViewModel.init(suggestion: suggestion.suggestion)
     }
     
+    public static func getDemoViewModels() -> [IMSuggestionViewModel] {
+        var suggestions: [IMSuggestionViewModel] = [IMSuggestionViewModel]()
+        suggestions.append(IMSuggestionViewModel(suggestion: "batman"))
+        suggestions.append(IMSuggestionViewModel(suggestion: "superman"))
+        return suggestions
+    }
+    
 }
