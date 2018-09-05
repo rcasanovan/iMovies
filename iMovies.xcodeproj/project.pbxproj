@@ -212,8 +212,8 @@
 		C82AD77F213DA0D4000EF9A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C8FEDA90214049A300A54B23 /* Common */,
 				C82AD780213DA0EF000EF9A4 /* Search */,
-				C8FEDA8E214046ED00A54B23 /* IMBaseViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -455,6 +455,14 @@
 				C8C54B99213D9F2600E8C5A0 /* Info.plist */,
 			);
 			path = iMoviesTests;
+			sourceTree = "<group>";
+		};
+		C8FEDA90214049A300A54B23 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C8FEDA8E214046ED00A54B23 /* IMBaseViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		F6C905871826AEED4C2B8B07 /* Frameworks */ = {

@@ -47,6 +47,7 @@ extension IMSearchViewController {
         
         configureSubviews()
         addSubviews()
+        showSuggestions(show: false, height: 0.0, animated: false)
     }
 
     private func configureSubviews() {
@@ -64,8 +65,6 @@ extension IMSearchViewController {
         
         registerCells()
         setupDatasource()
-        
-        showSuggestions(show: false, height: 0.0, animated: false)
     }
     
     private func registerCells() {
