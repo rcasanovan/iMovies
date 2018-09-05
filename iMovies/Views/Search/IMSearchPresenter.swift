@@ -54,7 +54,7 @@ extension IMSearchPresenter {
 extension IMSearchPresenter: IMSearchPresenterDelegate {
     
     func viewDidLoad() {
-        getMoviesWithMovie("omen")
+        getMoviesWithMovie("batman")
     }
     
     func searchMovie(_ movie: String) {

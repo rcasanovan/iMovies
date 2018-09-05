@@ -17,7 +17,10 @@ def iMoviesPods
     #Realm (data base)
     pod 'RealmSwift', '~> 3.7.6'
     
-    #networking
+    #Loader
+    pod 'SVProgressHUD', '~> 2.2.5'
+    
+    #Networking
     pod 'FXReachability', '~> 1.3.2'
     
 end
