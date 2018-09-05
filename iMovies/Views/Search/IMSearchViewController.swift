@@ -56,7 +56,7 @@ extension IMSearchViewController {
         
         moviesTableView = UITableView(frame: moviesContainerView.bounds, style: .plain)
         moviesTableView?.tableFooterView = UIView()
-        moviesTableView?.estimatedRowHeight = 170.0
+        moviesTableView?.estimatedRowHeight = 193.0
         moviesTableView?.rowHeight = UITableViewAutomaticDimension
         moviesTableView?.invalidateIntrinsicContentSize()
         moviesTableView?.allowsSelection = false

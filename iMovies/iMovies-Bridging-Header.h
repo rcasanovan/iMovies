@@ -10,5 +10,6 @@
 #define iMovies_Bridging_Header_h
 
 #import <Haneke/Haneke.h>
+#import <EDStarRating/EDStarRating.h>
 
 #endif /* iMovies_Bridging_Header_h */

@@ -15,6 +15,7 @@ class IMMovieTableViewCell: UITableViewCell {
     private var posterImageView: UIImageView = UIImageView()
     private var titleLabel: UILabel = UILabel()
     private var releaseDateLabel: UILabel = UILabel()
+    private var movieStarRating: EDStarRating = EDStarRating()
     private var overviewLabel: UILabel = UILabel()
     
     private var viewModel: IMMovieViewModel?
@@ -81,6 +82,13 @@ extension IMMovieTableViewCell {
         releaseDateLabel.font = UIFont.regularWithSize(size: 14.0)
         releaseDateLabel.textColor = .white
         
+        movieStarRating.starImage = UIImage(named: "StarRatingEmpty")
+        movieStarRating.starHighlightedImage = UIImage(named: "StarRatingFull")
+        movieStarRating.maxRating = 5
+        movieStarRating.editable = false
+        movieStarRating.displayMode = UInt(EDStarRatingDisplayFull)
+        movieStarRating.backgroundColor = .clear
+        
         overviewLabel.font = UIFont.regularWithSize(size: 15.0)
         overviewLabel.textColor = .white
         overviewLabel.numberOfLines = 0
@@ -92,6 +100,7 @@ extension IMMovieTableViewCell {
         }
         titleLabel.text = viewModel.title
         releaseDateLabel.text = viewModel.releaseDate
+        movieStarRating.rating = 4.0
         
         guard let overview = viewModel.overview else {
             return
@@ -148,6 +157,13 @@ extension IMMovieTableViewCell {
             static let trailing: CGFloat = 16.0
         }
         
+        struct StarRating {
+            static let height: CGFloat = 15.0
+            static let width: CGFloat = 100.0
+            static let top: CGFloat = 8.0
+            static let leading: CGFloat = 8.0
+        }
+        
         struct OverviewLabel {
             static let top: CGFloat = 8.0
             static let bottom: CGFloat = 8.0
@@ -168,6 +184,7 @@ extension IMMovieTableViewCell {
         addSubview(posterImageView)
         addSubview(titleLabel)
         addSubview(releaseDateLabel)
+        addSubview(movieStarRating)
         addSubview(overviewLabel)
         
         addConstraintsWithFormat("H:|[v0]|", views: backgroundImageView)
@@ -182,8 +199,11 @@ extension IMMovieTableViewCell {
         addConstraintsWithFormat("H:[v0]-\(Layout.ReleaseDateLabel.leading)-[v1]-\(Layout.ReleaseDateLabel.trailing)-|", views: posterImageView, releaseDateLabel)
         addConstraintsWithFormat("V:[v0]-\(Layout.ReleaseDateLabel.top)-[v1(\(Layout.ReleaseDateLabel.height))]", views: titleLabel, releaseDateLabel)
         
+        addConstraintsWithFormat("H:[v0]-\(Layout.StarRating.leading)-[v1(\(Layout.StarRating.width))]", views: posterImageView, movieStarRating)
+        addConstraintsWithFormat("V:[v0]-\(Layout.StarRating.top)-[v1(\(Layout.StarRating.height))]", views: releaseDateLabel, movieStarRating)
+        
         addConstraintsWithFormat("H:[v0]-\(Layout.OverviewLabel.leading)-[v1]-\(Layout.OverviewLabel.trailing)-|", views: posterImageView, overviewLabel)
-        addConstraintsWithFormat("V:[v0]-\(Layout.OverviewLabel.top)-[v1]-\(Layout.OverviewLabel.bottom)-|", views: releaseDateLabel, overviewLabel)
+        addConstraintsWithFormat("V:[v0]-\(Layout.OverviewLabel.top)-[v1]-\(Layout.OverviewLabel.bottom)-|", views: movieStarRating, overviewLabel)
     }
     
 }
