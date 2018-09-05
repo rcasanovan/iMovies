@@ -54,6 +54,7 @@
 		C8C54B8A213D9F2600E8C5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */; };
 		C8C54B8D213D9F2600E8C5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B8B213D9F2600E8C5A0 /* LaunchScreen.storyboard */; };
 		C8DF0BB7DB4CC03C507E8671 /* Pods_iMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB7296C6701111E1B70B78 /* Pods_iMovies.framework */; };
+		C8FEDA8F214046ED00A54B23 /* IMBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FEDA8E214046ED00A54B23 /* IMBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		C8C54B8E213D9F2600E8C5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C54B93213D9F2600E8C5A0 /* iMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C54B99213D9F2600E8C5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8FEDA8E214046ED00A54B23 /* IMBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMBaseViewController.swift; sourceTree = "<group>"; };
 		D0331BA2DFB2B9E43C2257A2 /* Pods-iMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iMovies/Pods-iMovies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				C82AD780213DA0EF000EF9A4 /* Search */,
+				C8FEDA8E214046ED00A54B23 /* IMBaseViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				C82AD7B6213E8F90000EF9A4 /* IMSearchPresenter.swift in Sources */,
 				C82AD7D9213F1C60000EF9A4 /* IMSearchSuggestionsManager.swift in Sources */,
 				C82AD7A4213DC398000EF9A4 /* IMMoviesResponse.swift in Sources */,
+				C8FEDA8F214046ED00A54B23 /* IMBaseViewController.swift in Sources */,
 				C82AD7B2213E8C11000EF9A4 /* IMMovieViewModel.swift in Sources */,
 				C80BD9F7213F38BD001B66EB /* IMSuggestionsDatasource.swift in Sources */,
 				C82AD792213DB1B7000EF9A4 /* HTTPCode.swift in Sources */,

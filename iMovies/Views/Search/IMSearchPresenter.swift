@@ -27,9 +27,11 @@ class IMSearchPresenter {
 extension IMSearchPresenter {
     
     private func getMoviesWithMovie(_ movie: String) {
+        view?.showProgress(true)
         interactor.getMoviesWith(movie: movie) { [weak self] (response) in
             guard let `self` = self else { return }
             
+            self.view?.showProgress(false)
             switch response {
             case .success(let movies):
                 guard let movies = movies?.results else {

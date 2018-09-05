@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IMSearchViewController: UIViewController {
+class IMSearchViewController: IMBaseViewController {
     
     public var presenter: IMSearchPresenterDelegate?
     
@@ -168,6 +168,10 @@ extension IMSearchViewController: IMSearchViewInjection {
     
     func loadSuggestions(_ suggestions: [IMSuggestionViewModel]) {
         suggestionsView.suggestions = suggestions
+    }
+    
+    func showProgress(_ show: Bool) {
+        showLoader(show)
     }
     
 }

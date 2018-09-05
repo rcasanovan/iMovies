@@ -12,6 +12,7 @@ import Foundation
 protocol IMSearchViewInjection : class {
     func loadMovies(_ movies: [IMMovieViewModel])
     func loadSuggestions(_ suggestions: [IMSuggestionViewModel])
+    func showProgress(_ show: Bool)
 }
 
 protocol IMSearchPresenterDelegate : class {
