@@ -17,8 +17,9 @@ struct IMMovieViewModel {
     let title: String
     let releaseDate: String?
     let overview: String?
+    let rating: Float
     
-    init(id: UInt, smallUrlImage: URL?, mediumUrlImage: URL?, largeUrlImage: URL?, title: String, releaseDate: String?, overview: String?) {
+    init(id: UInt, smallUrlImage: URL?, mediumUrlImage: URL?, largeUrlImage: URL?, title: String, releaseDate: String?, overview: String?, rating: Float) {
         self.id = id
         self.smallUrlImage = smallUrlImage
         self.mediumUrlImage = mediumUrlImage
@@ -26,6 +27,7 @@ struct IMMovieViewModel {
         self.title = title
         self.releaseDate = releaseDate
         self.overview = overview
+        self.rating = rating
     }
     
     public static func getViewModelsWith(movies: [IMSingleMovieResponse]) -> [IMMovieViewModel] {
@@ -37,6 +39,8 @@ struct IMMovieViewModel {
         let mediumUrlImage = IMMovieImageManager.getMediumImageUrlWith(movie.poster_path)
         let largeUrlImage = IMMovieImageManager.getLargeImageUrlWith(movie.poster_path)
         let releaseDate = Date.getMMMddyyyyFormatWithStringDate(movie.release_date)
-        return IMMovieViewModel.init(id: movie.id, smallUrlImage: smallUrlImage, mediumUrlImage: mediumUrlImage, largeUrlImage: largeUrlImage, title: movie.title, releaseDate: releaseDate, overview: movie.overview)
+        let rating = (movie.vote_average * 5.0) / 10.0
+        return IMMovieViewModel.init(id: movie.id, smallUrlImage: smallUrlImage, mediumUrlImage: mediumUrlImage, largeUrlImage: largeUrlImage, title: movie.title, releaseDate: releaseDate, overview: movie.overview, rating: rating)
     }
+
 }

@@ -100,7 +100,7 @@ extension IMMovieTableViewCell {
         }
         titleLabel.text = viewModel.title
         releaseDateLabel.text = viewModel.releaseDate
-        movieStarRating.rating = 4.0
+        movieStarRating.rating = viewModel.rating
         
         guard let overview = viewModel.overview else {
             return
