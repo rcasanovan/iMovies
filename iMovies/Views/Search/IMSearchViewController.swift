@@ -154,6 +154,7 @@ extension IMSearchViewController: IMSuggestionsViewDelegate {
     
     func suggestionSelectedAt(index: NSInteger) {
         showSuggestions(show: false, height: 0.0, animated: false)
+        searchView.hideKeyboard()
         presenter?.suggestionSelectedAt(index: index)
     }
     

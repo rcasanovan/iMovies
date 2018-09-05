@@ -38,6 +38,11 @@ class IMSearchView: UIView {
         return Layout.height
     }
     
+    public func hideKeyboard() {
+        searchBar.resignFirstResponder()
+        showCancel(show: false, animated: true)
+    }
+    
 }
 
 // MARK: - Setup views
