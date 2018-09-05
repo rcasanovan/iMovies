@@ -11,11 +11,15 @@ def iMoviesPods
     #Images
     pod 'Haneke', '~> 1.0'
     
-    #Plist wrapper
+    #Rating (stars)
+    pod 'EDStarRating', '~> 1.1'
+    
+    #Realm (data base)
     pod 'RealmSwift', '~> 3.7.6'
     
     #networking
     pod 'FXReachability', '~> 1.3.2'
+    
 end
 
 target 'iMovies' do

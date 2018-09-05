@@ -1,4 +1,5 @@
 PODS:
+  - EDStarRating (1.1)
   - FXReachability (1.3.2)
   - Haneke (1.0.2)
   - Realm (3.7.6):
@@ -8,23 +9,26 @@ PODS:
     - Realm (= 3.7.6)
 
 DEPENDENCIES:
+  - EDStarRating (~> 1.1)
   - FXReachability (~> 1.3.2)
   - Haneke (~> 1.0)
   - RealmSwift (~> 3.7.6)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - EDStarRating
     - FXReachability
     - Haneke
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
+  EDStarRating: a41a6440a945020745d0e9ff8ada7d1afa952114
   FXReachability: 9a1a07c511e1f8026f2c88b06a70847715078fce
   Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
 
-PODFILE CHECKSUM: 809d16ae62306f0580330f3995868c2195c1106a
+PODFILE CHECKSUM: 5a7ce7eca8c0cfd26221f00dcaae377a881f6ffb
 
 COCOAPODS: 1.5.3
