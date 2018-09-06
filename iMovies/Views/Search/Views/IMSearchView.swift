@@ -105,6 +105,10 @@ extension IMSearchView {
         cancelButtonWidthConstraint?.constant = show ? 93.0 : 0.0;
         searchContainerViewTrailingConstraint?.constant = show ? -115.0 : -7.0;
         
+        if !show {
+            searchBar.text = ""
+        }
+        
         UIView.animate(withDuration: animateDuration) {
             self.layoutIfNeeded()
         }
@@ -124,6 +128,7 @@ extension IMSearchView: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        showCancel(show: false, animated: true)
         delegate?.searchButtonPressedWithSearch(search: searchBar.text)
     }
     
