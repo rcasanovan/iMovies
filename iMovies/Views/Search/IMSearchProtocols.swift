@@ -28,7 +28,10 @@ typealias IMGetMoviesCompletionBlock = (Result<IMMoviesResponse?>) -> Void
 typealias IMGetSuggestionsCompletionBlock = ([IMSuggestionViewModel]) -> Void
 
 protocol IMSearchInteractorDelegate : class {
+    func shouldGetMovies() -> Bool
+    func clearSearch()
     func getMoviesWith(movie: String, completion: @escaping IMGetMoviesCompletionBlock)
     func saveSearch(_ search: String)
     func getAllSuggestions(completion: @escaping IMGetSuggestionsCompletionBlock)
+    func updateResultResponse(_ response: IMMoviesResponse?)
 }

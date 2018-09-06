@@ -13,6 +13,7 @@ class IMSearchPresenter {
     private weak var view: IMSearchViewInjection?
     private let interactor: IMSearchInteractorDelegate
     
+    private var movie: String?
     private var movies: [IMMovieViewModel]
     private var suggestions: [IMSuggestionViewModel] = [IMSuggestionViewModel]()
     
@@ -27,6 +28,8 @@ class IMSearchPresenter {
 extension IMSearchPresenter {
     
     private func getMoviesWithMovie(_ movie: String) {
+        if !interactor.shouldGetMovies() { return }
+        
         view?.showProgress(true)
         interactor.getMoviesWith(movie: movie) { [weak self] (response) in
             guard let `self` = self else { return }
@@ -34,6 +37,8 @@ extension IMSearchPresenter {
             self.view?.showProgress(false)
             switch response {
             case .success(let movies):
+                self.interactor.updateResultResponse(movies)
+                
                 guard let movies = movies?.results else {
                     return
                 }
@@ -52,6 +57,7 @@ extension IMSearchPresenter {
     
     private func clearSearch() {
         movies = []
+        interactor.clearSearch()
     }
     
 }
@@ -64,6 +70,7 @@ extension IMSearchPresenter: IMSearchPresenterDelegate {
             return
         }
         
+        self.movie = movie
         clearSearch()
         getMoviesWithMovie(movie.condenseWhitespaces())
     }
@@ -85,7 +92,8 @@ extension IMSearchPresenter: IMSearchPresenterDelegate {
     }
     
     func loadNextPage() {
-        print("load next page")
+        guard let movie = movie else { return }
+        getMoviesWithMovie(movie)
     }
     
 }
