@@ -42,9 +42,14 @@ extension IMSearchPresenter {
                 guard let movies = movies?.results else {
                     return
                 }
+                
                 if !movies.isEmpty {
                     self.interactor.saveSearch(movie)
                 }
+                else {
+                    self.view?.showMessageWith(title: "Oops", message: "It seems we don't have that movie in the catalog right now 😢. Please try again", actionTitle: "Accept")
+                }
+                
                 self.movies.append(contentsOf: IMMovieViewModel.getViewModelsWith(movies: movies))
                 self.view?.loadMovies(self.movies)
                 break
@@ -66,7 +71,7 @@ extension IMSearchPresenter: IMSearchPresenterDelegate {
     
     func searchMovie(_ movie: String) {
         if movie.isEmptyOrWhitespace() {
-            print("TODO: Show an alert box")
+            view?.showMessageWith(title: "Oops ✋🤚", message: "It looks you´re trying to search a movie using a invalid criteria. Please try again", actionTitle: "Accept")
             return
         }
         

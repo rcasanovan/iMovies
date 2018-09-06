@@ -26,4 +26,18 @@ class IMBaseViewController: UIViewController {
         show == true ? SVProgressHUD.show() : SVProgressHUD.dismiss()
     }
     
+    public func showAlertWith(title: String, message: String, actionTitle: String) {
+        let alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(
+            title: actionTitle,
+            style: .default,
+            handler: nil))
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
 }

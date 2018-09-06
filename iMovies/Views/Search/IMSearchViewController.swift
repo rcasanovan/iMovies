@@ -189,4 +189,8 @@ extension IMSearchViewController: IMSearchViewInjection {
         showLoader(show)
     }
     
+    func showMessageWith(title: String, message: String, actionTitle: String) {
+        showAlertWith(title: title, message: message, actionTitle: actionTitle)
+    }
+    
 }
