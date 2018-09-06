@@ -30,7 +30,6 @@ class IMSearchViewController: IMBaseViewController {
         super.viewDidLoad()
         addObservers()
         setupViews()
-        presenter?.viewDidLoad()
     }
     
     override var prefersStatusBarHidden: Bool {
