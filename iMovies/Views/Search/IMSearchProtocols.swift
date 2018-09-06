@@ -17,6 +17,7 @@ protocol IMSearchViewInjection : class {
 
 protocol IMSearchPresenterDelegate : class {
     func searchMovie(_ movie: String)
+    func loadNextPage()
     func getSuggestions()
     func suggestionSelectedAt(index: NSInteger)
 }

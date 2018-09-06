@@ -84,4 +84,8 @@ extension IMSearchPresenter: IMSearchPresenterDelegate {
         searchMovie(suggestion.suggestion)
     }
     
+    func loadNextPage() {
+        print("load next page")
+    }
+    
 }

@@ -16,6 +16,7 @@ class IMSearchViewController: IMBaseViewController {
         didSet {
             datasource?.movies = movies
             moviesTableView?.reloadData()
+            isLoadingNextPage = false
         }
     }
     
@@ -25,6 +26,8 @@ class IMSearchViewController: IMBaseViewController {
     private var datasource: IMSearchDataSource?
     private let suggestionsView = IMSuggestionsView()
     private var suggestionsViewBottomConstraint: NSLayoutConstraint?
+    
+    private var isLoadingNextPage: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +64,7 @@ extension IMSearchViewController {
         moviesTableView?.invalidateIntrinsicContentSize()
         moviesTableView?.allowsSelection = false
         moviesTableView?.backgroundColor = .black
+        moviesTableView?.delegate = self
         
         registerCells()
         setupDatasource()
@@ -132,6 +136,19 @@ extension IMSearchViewController {
         suggestionsView.isHidden = !show
         UIView.animate(withDuration: animateDuration) {
             self.view.layoutIfNeeded()
+        }
+    }
+    
+}
+
+extension IMSearchViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let position = Int(((75.0 * Double(movies.count - 1)) / 100.0))
+        
+        if !self.isLoadingNextPage && indexPath.item == position {
+            self.isLoadingNextPage = true
+            presenter?.loadNextPage()
         }
     }
     
