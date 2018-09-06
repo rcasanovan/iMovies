@@ -37,7 +37,9 @@ extension IMSearchPresenter {
                 guard let movies = movies?.results else {
                     return
                 }
-                self.interactor.saveSearch(movie)
+                if !movies.isEmpty {
+                    self.interactor.saveSearch(movie)
+                }
                 self.movies.append(contentsOf: IMMovieViewModel.getViewModelsWith(movies: movies))
                 self.view?.loadMovies(self.movies)
                 break

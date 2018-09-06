@@ -34,4 +34,9 @@ class IMStringTests: XCTestCase {
         XCTAssert(string.condenseWhitespaces() == "Iron man 3")
     }
     
+    func testStringWithSimpleWhitespaces() {
+        let string = "Iron man"
+        XCTAssert(string.isEmptyOrWhitespace() == false)
+    }
+    
 }

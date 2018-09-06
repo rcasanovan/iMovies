@@ -59,6 +59,7 @@ extension IMSearchView {
     private func configureSubviews() {
         searchContainerView.backgroundColor = .clear
 
+        searchBar.placeholder = "Search your favorites movies"
         searchBar.backgroundColor = .clear
         searchBar.barTintColor = .clear
         searchBar.delegate = self
@@ -128,8 +129,8 @@ extension IMSearchView: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        showCancel(show: false, animated: true)
         delegate?.searchButtonPressedWithSearch(search: searchBar.text)
+        showCancel(show: false, animated: true)
     }
     
 }
