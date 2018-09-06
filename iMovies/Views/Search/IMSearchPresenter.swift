@@ -27,10 +27,10 @@ class IMSearchPresenter {
 
 extension IMSearchPresenter {
     
-    private func getMoviesWithMovie(_ movie: String) {
+    private func getMoviesWithMovie(_ movie: String, showProgress: Bool) {
         if !interactor.shouldGetMovies() { return }
         
-        view?.showProgress(true)
+        view?.showProgress(showProgress)
         interactor.getMoviesWith(movie: movie) { [weak self] (response) in
             guard let `self` = self else { return }
             
@@ -70,9 +70,9 @@ extension IMSearchPresenter: IMSearchPresenterDelegate {
             return
         }
         
-        self.movie = movie
+        self.movie = movie.condenseWhitespaces()
         clearSearch()
-        getMoviesWithMovie(movie.condenseWhitespaces())
+        getMoviesWithMovie(movie, showProgress: true)
     }
     
     func getSuggestions() {
@@ -93,7 +93,7 @@ extension IMSearchPresenter: IMSearchPresenterDelegate {
     
     func loadNextPage() {
         guard let movie = movie else { return }
-        getMoviesWithMovie(movie)
+        getMoviesWithMovie(movie, showProgress: false)
     }
     
 }
