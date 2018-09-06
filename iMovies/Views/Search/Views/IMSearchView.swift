@@ -53,6 +53,7 @@ extension IMSearchView {
         
         configureSubviews()
         addSubviews()
+        showCancel(show: false, animated: false)
     }
     
     private func configureSubviews() {
@@ -65,7 +66,6 @@ extension IMSearchView {
         cancelButton.setBackgroundImage(UIImage(named: "CancelButton"), for: .normal)
         cancelButton.setBackgroundImage(UIImage(named: "CancelButtonPressed"), for: .selected)
         cancelButton.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
-        showCancel(show: false, animated: false)
     }
     
 }
@@ -101,7 +101,7 @@ extension IMSearchView {
     }
     
     private func showCancel(show: Bool, animated: Bool) {
-        let animateDuration = animated ? 0.25 : 0;
+        let animateDuration = animated ? 0.45 : 0;
         cancelButtonWidthConstraint?.constant = show ? 93.0 : 0.0;
         searchContainerViewTrailingConstraint?.constant = show ? -115.0 : -7.0;
         
