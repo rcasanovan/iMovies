@@ -57,6 +57,8 @@
 		C8C6B2FC214142B600F7653B /* IMStringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B2FB214142B600F7653B /* IMStringTest.swift */; };
 		C8C6B2FE214178F700F7653B /* IMTotalResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B2FD214178F700F7653B /* IMTotalResultsView.swift */; };
 		C8C6B3022141B30200F7653B /* IMUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B3012141B30200F7653B /* IMUtils.swift */; };
+		C8C6B3062141C2A300F7653B /* IMSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B3052141C2A300F7653B /* IMSearchRouter.swift */; };
+		C8C6B3092141C6F100F7653B /* IMReachabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B3082141C6F100F7653B /* IMReachabilityViewController.swift */; };
 		C8DF0BB7DB4CC03C507E8671 /* Pods_iMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB7296C6701111E1B70B78 /* Pods_iMovies.framework */; };
 		C8FEDA8F214046ED00A54B23 /* IMBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FEDA8E214046ED00A54B23 /* IMBaseViewController.swift */; };
 /* End PBXBuildFile section */
@@ -131,6 +133,8 @@
 		C8C6B2FB214142B600F7653B /* IMStringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMStringTest.swift; sourceTree = "<group>"; };
 		C8C6B2FD214178F700F7653B /* IMTotalResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMTotalResultsView.swift; sourceTree = "<group>"; };
 		C8C6B3012141B30200F7653B /* IMUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMUtils.swift; sourceTree = "<group>"; };
+		C8C6B3052141C2A300F7653B /* IMSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMSearchRouter.swift; sourceTree = "<group>"; };
+		C8C6B3082141C6F100F7653B /* IMReachabilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMReachabilityViewController.swift; sourceTree = "<group>"; };
 		C8FEDA8E214046ED00A54B23 /* IMBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMBaseViewController.swift; sourceTree = "<group>"; };
 		D0331BA2DFB2B9E43C2257A2 /* Pods-iMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iMovies/Pods-iMovies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +226,7 @@
 			children = (
 				C8FEDA90214049A300A54B23 /* Common */,
 				C82AD780213DA0EF000EF9A4 /* Search */,
+				C8C6B3072141C6CD00F7653B /* Reachability */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				C82AD7B7213E9444000EF9A4 /* IMSearchDataSource.swift */,
 				C82AD7B5213E8F90000EF9A4 /* IMSearchPresenter.swift */,
 				C82AD7B3213E8ECA000EF9A4 /* IMSearchInteractor.swift */,
+				C8C6B3052141C2A300F7653B /* IMSearchRouter.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -493,6 +499,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		C8C6B3072141C6CD00F7653B /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				C8C6B3082141C6F100F7653B /* IMReachabilityViewController.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		C8FEDA90214049A300A54B23 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,6 +752,7 @@
 				C82AD7B8213E9444000EF9A4 /* IMSearchDataSource.swift in Sources */,
 				C82AD7AF213E89EE000EF9A4 /* IMSearchProtocols.swift in Sources */,
 				C82AD794213DB1CF000EF9A4 /* NetworkHeaders.swift in Sources */,
+				C8C6B3062141C2A300F7653B /* IMSearchRouter.swift in Sources */,
 				C82AD7D3213EAF50000EF9A4 /* UILabel.swift in Sources */,
 				C82AD7BB213E9501000EF9A4 /* IMMovieTableViewCell.swift in Sources */,
 				C82AD7DC213F1CA0000EF9A4 /* IMSearchSuggestion.swift in Sources */,
@@ -745,6 +760,7 @@
 				C82AD7D6213ED7C9000EF9A4 /* IMSearchView.swift in Sources */,
 				C80BD9F3213F36EA001B66EB /* IMSuggestionViewModel.swift in Sources */,
 				C82AD78B213DADF9000EF9A4 /* EndPoint.swift in Sources */,
+				C8C6B3092141C6F100F7653B /* IMReachabilityViewController.swift in Sources */,
 				C8C6B2FE214178F700F7653B /* IMTotalResultsView.swift in Sources */,
 				C82AD7D0213EA0C6000EF9A4 /* UIFont.swift in Sources */,
 				C80BD9EC213F2C2C001B66EB /* Results.swift in Sources */,

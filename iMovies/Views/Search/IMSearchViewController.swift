@@ -85,6 +85,7 @@ extension IMSearchViewController {
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeAppear), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(reachabilityStatusChanged), name: NSNotification.Name.FXReachabilityStatusDidChange, object: nil)
     }
     
 }
@@ -100,6 +101,10 @@ extension IMSearchViewController {
     
     @objc private func keyboardWillBeHidden(notification: NSNotification) {
         showSuggestions(show: false, height: 0.0, animated: true)
+    }
+    
+    @objc private func reachabilityStatusChanged() {
+        presenter?.reachabilityStatusChanged()
     }
     
 }

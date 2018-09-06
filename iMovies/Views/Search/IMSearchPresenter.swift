@@ -12,6 +12,7 @@ class IMSearchPresenter {
     
     private weak var view: IMSearchViewInjection?
     private let interactor: IMSearchInteractorDelegate
+    private let router: IMSearchRouterDelegate
     
     private var movie: String?
     private var movies: [IMMovieViewModel]
@@ -20,7 +21,8 @@ class IMSearchPresenter {
     init(view: IMSearchViewInjection) {
         self.view = view
         self.interactor = IMSearchInteractor()
-        movies = [IMMovieViewModel]()
+        self.router = IMSearchRouter(view: view)
+        self.movies = [IMMovieViewModel]()
     }
     
 }
@@ -99,6 +101,12 @@ extension IMSearchPresenter: IMSearchPresenterDelegate {
     func loadNextPage() {
         guard let movie = movie else { return }
         getMoviesWithMovie(movie, showProgress: false)
+    }
+    
+    func reachabilityStatusChanged() {
+        view?.showProgress(false)
+        let reachable = FXReachability.isReachable()
+        router.showReachabilityStatus(show: !reachable)
     }
     
 }
