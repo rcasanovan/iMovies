@@ -51,7 +51,7 @@ extension IMSearchPresenter {
                 }
                 
                 self.movies.append(contentsOf: IMMovieViewModel.getViewModelsWith(movies: movies))
-                self.view?.loadMovies(self.movies)
+                self.view?.loadMovies(self.movies, fromBeginning: showProgress)
                 break
             case .failure(_):
                 print("failure")

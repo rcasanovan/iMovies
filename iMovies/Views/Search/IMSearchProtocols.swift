@@ -10,7 +10,7 @@ import Foundation
 
 // View / Presenter
 protocol IMSearchViewInjection : class {
-    func loadMovies(_ movies: [IMMovieViewModel])
+    func loadMovies(_ movies: [IMMovieViewModel], fromBeginning: Bool)
     func loadSuggestions(_ suggestions: [IMSuggestionViewModel])
     func showProgress(_ show: Bool)
     func showMessageWith(title: String, message: String, actionTitle: String)

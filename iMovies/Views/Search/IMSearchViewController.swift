@@ -177,7 +177,10 @@ extension IMSearchViewController: IMSuggestionsViewDelegate {
 
 extension IMSearchViewController: IMSearchViewInjection {
     
-    func loadMovies(_ movies: [IMMovieViewModel]) {
+    func loadMovies(_ movies: [IMMovieViewModel], fromBeginning: Bool) {
+        if fromBeginning {
+            // TODO: Scroll to top automatically
+        }
         self.movies = movies
     }
     
