@@ -21,6 +21,7 @@ class IMSearchViewController: IMBaseViewController {
     }
     
     private let searchView: IMSearchView = IMSearchView()
+    private let totalResultsView: IMTotalResultsView = IMTotalResultsView()
     private let moviesContainerView: UIView = UIView()
     private var moviesTableView: UITableView?
     private var datasource: IMSearchDataSource?
@@ -29,8 +30,8 @@ class IMSearchViewController: IMBaseViewController {
     
     private var isLoadingNextPage: Bool = false
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         addObservers()
         setupViews()
     }
@@ -108,14 +109,28 @@ extension IMSearchViewController {
     
     private func addSubviews() {
         view.addSubview(searchView)
+        view.addSubview(totalResultsView)
         view.addSubview(moviesContainerView)
         view.addSubview(suggestionsView)
         
+        var top: CGFloat = 0.0
+        var bottom: CGFloat = 0.0
+        if #available(iOS 11.0, *) {
+            if IMUtils.getDeviceType() == .iPhoneX {
+                top = view.safeAreaInsets.top
+                bottom = view.safeAreaInsets.bottom
+            }
+        }
+        
+        
         view.addConstraintsWithFormat("H:|[v0]|", views: searchView)
-        view.addConstraintsWithFormat("V:|[v0(\(searchView.getHeight()))]", views: searchView)
+        view.addConstraintsWithFormat("V:|-\(top)-[v0(\(searchView.getHeight()))]", views: searchView)
+        
+        view.addConstraintsWithFormat("H:|[v0]|", views: totalResultsView)
+        view.addConstraintsWithFormat("V:[v0][v1(\(totalResultsView.getHeight()))]", views: searchView, totalResultsView)
         
         view.addConstraintsWithFormat("H:|[v0]|", views: moviesContainerView)
-        view.addConstraintsWithFormat("V:|[v0][v1]|", views: searchView, moviesContainerView)
+        view.addConstraintsWithFormat("V:[v0][v1]-\(bottom)-|", views: totalResultsView, moviesContainerView)
         
         if let moviesTableView = moviesTableView {
             moviesContainerView.addSubview(moviesTableView)
@@ -124,7 +139,7 @@ extension IMSearchViewController {
         }
         
         view.addConstraintsWithFormat("H:|[v0]|", views: suggestionsView)
-        view.addConstraintsWithFormat("V:|[v0][v1]", views: searchView, suggestionsView)
+        view.addConstraintsWithFormat("V:[v0][v1]", views: searchView, suggestionsView)
         let suggestionsViewBottomConstraint = NSLayoutConstraint(item: suggestionsView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0)
         view.addConstraint(suggestionsViewBottomConstraint)
         self.suggestionsViewBottomConstraint = suggestionsViewBottomConstraint
@@ -177,11 +192,12 @@ extension IMSearchViewController: IMSuggestionsViewDelegate {
 
 extension IMSearchViewController: IMSearchViewInjection {
     
-    func loadMovies(_ movies: [IMMovieViewModel], fromBeginning: Bool) {
+    func loadMovies(_ movies: [IMMovieViewModel], fromBeginning: Bool, totalResults: UInt) {
         if fromBeginning {
             // TODO: Scroll to top automatically
         }
         self.movies = movies
+        totalResultsView.bindWithText("Total movies: \(totalResults)")
     }
     
     func loadSuggestions(_ suggestions: [IMSuggestionViewModel]) {

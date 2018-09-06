@@ -39,7 +39,7 @@ extension IMSearchPresenter {
             case .success(let movies):
                 self.interactor.updateResultResponse(movies)
                 
-                guard let movies = movies?.results else {
+                guard let totalResults = movies?.total_results, let movies = movies?.results else {
                     return
                 }
                 
@@ -51,7 +51,7 @@ extension IMSearchPresenter {
                 }
                 
                 self.movies.append(contentsOf: IMMovieViewModel.getViewModelsWith(movies: movies))
-                self.view?.loadMovies(self.movies, fromBeginning: showProgress)
+                self.view?.loadMovies(self.movies, fromBeginning: showProgress, totalResults: totalResults)
                 break
             case .failure(_):
                 print("failure")
