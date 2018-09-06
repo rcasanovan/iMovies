@@ -53,6 +53,8 @@
 		C8C54B83213D9F2500E8C5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */; };
 		C8C54B8A213D9F2600E8C5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B89213D9F2600E8C5A0 /* Assets.xcassets */; };
 		C8C54B8D213D9F2600E8C5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C54B8B213D9F2600E8C5A0 /* LaunchScreen.storyboard */; };
+		C8C6B2F921413F8F00F7653B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B2F821413F8F00F7653B /* String.swift */; };
+		C8C6B2FC214142B600F7653B /* IMStringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B2FB214142B600F7653B /* IMStringTest.swift */; };
 		C8DF0BB7DB4CC03C507E8671 /* Pods_iMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB7296C6701111E1B70B78 /* Pods_iMovies.framework */; };
 		C8FEDA8F214046ED00A54B23 /* IMBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FEDA8E214046ED00A54B23 /* IMBaseViewController.swift */; };
 /* End PBXBuildFile section */
@@ -123,6 +125,8 @@
 		C8C54B8E213D9F2600E8C5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C54B93213D9F2600E8C5A0 /* iMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C54B99213D9F2600E8C5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8C6B2F821413F8F00F7653B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		C8C6B2FB214142B600F7653B /* IMStringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMStringTest.swift; sourceTree = "<group>"; };
 		C8FEDA8E214046ED00A54B23 /* IMBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMBaseViewController.swift; sourceTree = "<group>"; };
 		D0331BA2DFB2B9E43C2257A2 /* Pods-iMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iMovies/Pods-iMovies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,6 +240,7 @@
 		C82AD783213DA542000EF9A4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C8C6B2F721413F8300F7653B /* String */,
 				C80BD9F8213F4521001B66EB /* Date */,
 				C80BD9EA213F2C1B001B66EB /* Results */,
 				C82AD7D1213EAF42000EF9A4 /* UILabel */,
@@ -449,12 +454,29 @@
 		C8C54B96213D9F2600E8C5A0 /* iMoviesTests */ = {
 			isa = PBXGroup;
 			children = (
+				C8C6B2FA2141429B00F7653B /* Strings */,
 				C80BD9E7213F22A3001B66EB /* Suggestions */,
 				C82AD7A5213E6F09000EF9A4 /* Movie Images */,
 				C82AD7A0213DB6CA000EF9A4 /* Network */,
 				C8C54B99213D9F2600E8C5A0 /* Info.plist */,
 			);
 			path = iMoviesTests;
+			sourceTree = "<group>";
+		};
+		C8C6B2F721413F8300F7653B /* String */ = {
+			isa = PBXGroup;
+			children = (
+				C8C6B2F821413F8F00F7653B /* String.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		C8C6B2FA2141429B00F7653B /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				C8C6B2FB214142B600F7653B /* IMStringTest.swift */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		C8FEDA90214049A300A54B23 /* Common */ = {
@@ -694,6 +716,7 @@
 				C82AD7AA213E7030000EF9A4 /* IMMovieImageManager.swift in Sources */,
 				C82AD78E213DB130000EF9A4 /* ResultError.swift in Sources */,
 				C82AD7B4213E8ECA000EF9A4 /* IMSearchInteractor.swift in Sources */,
+				C8C6B2F921413F8F00F7653B /* String.swift in Sources */,
 				C82AD786213DA55A000EF9A4 /* UIView.swift in Sources */,
 				C80BD9F5213F379B001B66EB /* IMSuggestionTableViewCell.swift in Sources */,
 				C82AD79F213DB447000EF9A4 /* IMGetMoviesRequest.swift in Sources */,
@@ -721,6 +744,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C6B2FC214142B600F7653B /* IMStringTest.swift in Sources */,
 				C82AD7A7213E6F31000EF9A4 /* IMMovieImagesTest.swift in Sources */,
 				C82AD7AC213E7CAF000EF9A4 /* IMDownloadImagesTest.swift in Sources */,
 				C82AD7A2213DB6E8000EF9A4 /* IMNetworkTests.swift in Sources */,

@@ -61,8 +61,13 @@ extension IMSearchPresenter: IMSearchPresenterDelegate {
     }
     
     func searchMovie(_ movie: String) {
+        if movie.isEmptyOrWhitespace() {
+            print("TODO: Show an alert box")
+            return
+        }
+        
         clearSearch()
-        getMoviesWithMovie(movie)
+        getMoviesWithMovie(movie.condenseWhitespaces())
     }
     
     func getSuggestions() {
