@@ -932,6 +932,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0331BA2DFB2B9E43C2257A2 /* Pods-iMovies.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5753N2Y6RP;
@@ -953,6 +954,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0153EB52AF137A0289902E5C /* Pods-iMovies.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5753N2Y6RP;
@@ -974,7 +976,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 86835C74085F076D13B3E165 /* Pods-iMoviesTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5753N2Y6RP;
@@ -996,7 +998,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7631A82C09F8DA847EBA1F94 /* Pods-iMoviesTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5753N2Y6RP;
