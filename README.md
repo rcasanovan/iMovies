@@ -55,7 +55,28 @@ I'm using a Swift Standard Library decodable functionality in order to manage a 
 
 Well I discovered that some movies doesn't have a poster path or an overview (it's strange I know 🤷‍♂) so it's better to manage these fields are optionals.
 
-Reference: https://developer.apple.com/documentation/swift/swift_standard_library/encoding_decoding_and_serialization
+Reference: [Apple documentation](https://developer.apple.com/documentation/swift/swift_standard_library/encoding_decoding_and_serialization)
+
+
+### Suggestions data model
+
+This model is used for the movies suggestions (last 10​ ​successful​ ​queries​ - exclude​ ​suggestions​ ​that​ ​return​ ​errors)
+
+```swift
+class IMSearchSuggestion: Object {
+    @objc dynamic var suggestionId: String?
+    @objc dynamic var suggestion: String = ""
+    @objc dynamic var timestamp: TimeInterval = NSDate().timeIntervalSince1970
+    
+    override class func primaryKey() -> String? {
+        return "suggestionId"
+    }
+}
+```
+
+As I'm using Realm for this it's important to define a class to manage each model in the database. In this case we only have one model (IMSearchSuggestion)
+
+Reference: [Realm](https://realm.io/docs/swift/latest)
 
 ## Search results
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/01.png?raw=true)
