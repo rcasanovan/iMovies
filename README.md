@@ -125,6 +125,25 @@ As I'm using Realm for this it's important to define a class to manage each mode
 
 Reference: [Realm](https://realm.io/docs/swift/latest)
 
+### Managers
+
+I think using managers is a good idea but be careful!. Please don't create managers as if the world were going to end tomorrow.
+
+I'm using only 3 here:
+
+#### IMSearchSuggestionsManager
+
+Used to manage all the suggestions (last 10​ ​successful​ ​queries​)
+
+#### IMMovieImageManager
+
+Used to manage the images (create the urls to retrieve the images)
+
+
+#### IMNetworkManager
+
+Used to manage the reachability
+
 ## Search results
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/01.png?raw=true)
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/02.png?raw=true)
