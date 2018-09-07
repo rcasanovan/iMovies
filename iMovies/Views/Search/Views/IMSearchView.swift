@@ -53,7 +53,6 @@ extension IMSearchView {
         
         configureSubviews()
         addSubviews()
-        showCancel(show: false, animated: false)
     }
     
     private func configureSubviews() {
@@ -86,13 +85,13 @@ extension IMSearchView {
         searchContainerView.addSubview(searchBar)
         
         addConstraintsWithFormat("H:|-7.0-[v0]", views: searchContainerView)
-        let searchContainerViewTrailingConstraint = NSLayoutConstraint(item: searchContainerView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0.0)
+        let searchContainerViewTrailingConstraint = NSLayoutConstraint(item: searchContainerView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -7.0)
         addConstraint(searchContainerViewTrailingConstraint)
         self.searchContainerViewTrailingConstraint = searchContainerViewTrailingConstraint
         addConstraintsWithFormat("V:|[v0]|", views: searchContainerView)
         
-        addConstraintsWithFormat("H:[v0(93.0)]-15.0-|", views: cancelButton)
-        addConstraintsWithFormat("V:|-7.0-[v0]", views: cancelButton)
+        addConstraintsWithFormat("H:[v0]-15.0-|", views: cancelButton)
+        addConstraintsWithFormat("V:|-7.0-[v0(31.0)]", views: cancelButton)
         let cancelButtonWidthConstraint = NSLayoutConstraint(item: cancelButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 0.0)
         addConstraint(cancelButtonWidthConstraint)
         self.cancelButtonWidthConstraint = cancelButtonWidthConstraint
