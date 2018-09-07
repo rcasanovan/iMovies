@@ -25,6 +25,8 @@ Suggestions​ ​should​ ​be​ ​persisted.
 
 5. As​ ​a​ ​user​ ​at​ ​the​ ​search​ ​screen​ ​with​ ​the​ ​auto​ ​suggest​ ​list​ ​view​ ​shown, when​ ​I​ ​select​ ​a​ ​suggestion then​ ​the​ ​search​ ​results​ ​of​ ​the​ ​suggestion​ ​will​ ​be​ ​shown.
 
+## Data models
+
 ## Search results
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/01.png?raw=true)
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/02.png?raw=true)
@@ -36,6 +38,8 @@ Suggestions​ ​should​ ​be​ ​persisted.
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/04.png?raw=true)
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/05.png?raw=true)
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/06.png?raw=true)
+
+## Support && contact
 
 ### Email
 
