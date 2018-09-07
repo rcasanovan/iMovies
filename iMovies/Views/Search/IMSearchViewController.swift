@@ -154,6 +154,10 @@ extension IMSearchViewController {
         }
     }
     
+    private func scrollToTop() {
+        moviesTableView?.setContentOffset(.zero, animated: false)
+    }
+    
 }
 
 extension IMSearchViewController: UITableViewDelegate {
@@ -194,7 +198,7 @@ extension IMSearchViewController: IMSearchViewInjection {
     
     func loadMovies(_ movies: [IMMovieViewModel], fromBeginning: Bool, totalResults: UInt) {
         if fromBeginning {
-            // TODO: Scroll to top automatically
+            scrollToTop()
         }
         self.movies = movies
         totalResultsView.isHidden = totalResults == 0
