@@ -8,7 +8,9 @@
 
 import Foundation
 
-class IMReachabilityViewController: IMBaseViewController {
+class IMGeneralMessageViewController: IMBaseViewController {
+    
+    public var presenter: IMGeneralMessagePresenter?
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -22,7 +24,7 @@ class IMReachabilityViewController: IMBaseViewController {
 }
 
 // MARK: - Setup views
-extension IMReachabilityViewController {
+extension IMGeneralMessageViewController {
     
     private func setupViews() {
         view.backgroundColor = .yellow
@@ -37,9 +39,16 @@ extension IMReachabilityViewController {
 }
 
 // MARK: - Layout & constraints
-extension IMReachabilityViewController {
+extension IMGeneralMessageViewController {
     
     private func addSubviews() {
     }
     
+}
+
+extension IMGeneralMessageViewController: IMGeneralMessageViewInjection {
+    
+    func load(title: String, message: String) {
+    }
+
 }

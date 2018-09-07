@@ -11,7 +11,7 @@ import Foundation
 class IMSearchRouter {
     
     private let view: IMSearchViewInjection
-    private var reachabilityView: IMReachabilityViewController?
+    private var reachabilityView: IMGeneralMessageViewController?
     
     private var iShowingNotReachable: Bool = false
     
@@ -26,7 +26,7 @@ extension IMSearchRouter: IMSearchRouterDelegate {
     func showReachabilityStatus(show: Bool) {
         if show && !iShowingNotReachable {
             iShowingNotReachable = true
-            reachabilityView = IMReachabilityViewController()
+            reachabilityView = IMGeneralMessageViewController()
             guard let view = view as? IMSearchViewController, let reachabilityView = reachabilityView else {
                 return
             }
