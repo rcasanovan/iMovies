@@ -8,10 +8,10 @@ This is a project to create a simple app to search movies
 ## Use cases
 
 1. As​ ​a​ ​user​ ​at​ ​the​ ​search​ ​screen, when​ ​I​ ​enter​ ​a​ ​name​ ​of​ ​a​ ​movie​ ​(e.g.​ ​"Batman",​ ​"Rocky")​ ​in​ ​the​ ​search​ ​box​ ​and tap​ ​on​ ​"search​ ​button" then​ ​I​ ​should​ ​see​ ​a​ ​new​ ​list​ ​view​ ​with​ ​the​ ​following​ ​rows:
--Movie​ ​Poster
--Movie​ ​name
--Release​ ​date
--Full​ ​Movie​ ​Overview
+* Movie​ ​Poster
+* Movie​ ​name
+* Release​ ​date
+* Full​ ​Movie​ ​Overview
 
 2. As​ ​a​ ​user​ ​at​ ​the​ ​Movie​ ​List​ ​Screen, when​ ​I​ ​scroll​ ​to​ ​the​ ​bottom​ ​of​ ​list then​ ​next​ ​page​ ​should​ ​load​ ​if​ ​available
 
