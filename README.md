@@ -2,8 +2,18 @@
 
 This is a project to create a simple app to search movies
 
+## Important note
+
+This project is using cocoapods but a gitignore file is there so the third-party libraries are not part of the repo. Please be sure to run the **pod install** command before running the project.
+
+If you have any doubt about cocoapods you can check the reference [here](https://cocoapods.org).
+
 ## Project Architecture 
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/projectArchitecture.jpeg?raw=true)
+
+References:
+* [Viper architecture](https://www.objc.io/issues/13-architecture/viper/)
+* [Viper for iOS](https://medium.com/@smalam119/viper-design-pattern-for-ios-application-development-7a9703902af6)
 
 ## Use cases
 
