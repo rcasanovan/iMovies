@@ -18,13 +18,17 @@ class IMSuggestionsView: UIView {
     
     public var suggestions: [IMSuggestionViewModel] = [IMSuggestionViewModel]() {
         didSet {
+            suggestionsTableView?.isHidden = suggestions.isEmpty
+            noSuggestionsLabel.isHidden = !suggestions.isEmpty
             datasource?.suggestions = suggestions
             suggestionsTableView?.reloadData()
         }
     }
     
+    private let noSuggestionsLabel = UILabel()
     private var suggestionsTableView: UITableView?
     private var datasource: IMSuggestionsDatasource?
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,7 +46,7 @@ class IMSuggestionsView: UIView {
 extension IMSuggestionsView {
     
     private func setupViews() {
-        backgroundColor = .yellow
+        backgroundColor = .white
         
         configureSubviews()
         addSubviews()
@@ -57,6 +61,11 @@ extension IMSuggestionsView {
         
         registerCells()
         setupDatasource()
+        
+        noSuggestionsLabel.font = UIFont.mediumWithSize(size: 14.0)
+        noSuggestionsLabel.textColor = .lightGray
+        noSuggestionsLabel.textAlignment = .center
+        noSuggestionsLabel.text = "No suggestions"
     }
     
     private func registerCells() {
@@ -76,6 +85,15 @@ extension IMSuggestionsView {
 extension IMSuggestionsView {
     
     private func addSubviews() {
+        addSubview(noSuggestionsLabel)
+        
+        addConstraintsWithFormat("H:|[v0]|", views: noSuggestionsLabel)
+        addConstraintsWithFormat("V:[v0(17.0)]", views: noSuggestionsLabel)
+        let xConstraint = NSLayoutConstraint(item: noSuggestionsLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
+        let yConstraint = NSLayoutConstraint(item: noSuggestionsLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        addConstraint(xConstraint)
+        addConstraint(yConstraint)
+        
         if let suggestionsTableView = suggestionsTableView {
             addSubview(suggestionsTableView)
             addConstraintsWithFormat("H:|[v0]|", views: suggestionsTableView)
