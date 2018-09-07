@@ -25,6 +25,10 @@ Suggestions​ ​should​ ​be​ ​persisted.
 
 5. As​ ​a​ ​user​ ​at​ ​the​ ​search​ ​screen​ ​with​ ​the​ ​auto​ ​suggest​ ​list​ ​view​ ​shown, when​ ​I​ ​select​ ​a​ ​suggestion then​ ​the​ ​search​ ​results​ ​of​ ​the​ ​suggestion​ ​will​ ​be​ ​shown.
 
+## First at all. Where is the data came from?
+
+I'm using the api from **themoviedb.org** (you can check the api documentation [here](https://www.themoviedb.org/documentation/api))
+
 ## Data models
 
 ### Network data models
@@ -54,6 +58,10 @@ I'm using a Swift Standard Library decodable functionality in order to manage a 
 **Why some properties are optionals?**
 
 Well I discovered that some movies doesn't have a poster path or an overview (it's strange I know 🤷‍♂) so it's better to manage these fields are optionals.
+
+**Are more properties there??**
+
+Obviously the response has more properties for each movie. I decided to use only these ones.
 
 Reference: [Apple documentation](https://developer.apple.com/documentation/swift/swift_standard_library/encoding_decoding_and_serialization)
 
