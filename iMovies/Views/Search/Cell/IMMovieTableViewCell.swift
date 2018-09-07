@@ -139,8 +139,9 @@ extension IMMovieTableViewCell {
         struct PosterImageView {
             static let height: CGFloat = 138.0
             static let width: CGFloat = 92.0
-            static let top: CGFloat = 16.0
             static let leading: CGFloat = 16.0
+            static let top: CGFloat = 16.0
+            static let bottom: CGFloat = 16.0
         }
         
         struct TitleLabel {
@@ -191,7 +192,7 @@ extension IMMovieTableViewCell {
         addConstraintsWithFormat("V:|[v0]|", views: backgroundImageView)
         
         addConstraintsWithFormat("H:|-\(Layout.PosterImageView.leading)-[v0(\(Layout.PosterImageView.width))]", views: posterImageView)
-        addConstraintsWithFormat("V:|-\(Layout.PosterImageView.top)-[v0(\(Layout.PosterImageView.height))]->=16.0-|", views: posterImageView)
+        addConstraintsWithFormat("V:|-\(Layout.PosterImageView.top)-[v0(\(Layout.PosterImageView.height))]->=\(Layout.PosterImageView.bottom)-|", views: posterImageView)
         
         addConstraintsWithFormat("H:[v0]-\(Layout.TitleLabel.leading)-[v1]-\(Layout.TitleLabel.trailing)-|", views: posterImageView, titleLabel)
         addConstraintsWithFormat("V:|-\(Layout.TitleLabel.top)-[v0(\(Layout.TitleLabel.height))]", views: titleLabel)

@@ -84,11 +84,19 @@ extension IMSuggestionsView {
 // MARK: - Layout & constraints
 extension IMSuggestionsView {
     
+    private struct Layout {
+        
+        struct NoSuggestionsLabel {
+            static let height: CGFloat = 17.0
+        }
+        
+    }
+    
     private func addSubviews() {
         addSubview(noSuggestionsLabel)
         
         addConstraintsWithFormat("H:|[v0]|", views: noSuggestionsLabel)
-        addConstraintsWithFormat("V:[v0(17.0)]", views: noSuggestionsLabel)
+        addConstraintsWithFormat("V:[v0(\(Layout.NoSuggestionsLabel.height))]", views: noSuggestionsLabel)
         let xConstraint = NSLayoutConstraint(item: noSuggestionsLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
         let yConstraint = NSLayoutConstraint(item: noSuggestionsLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
         addConstraint(xConstraint)

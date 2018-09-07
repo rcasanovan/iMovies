@@ -54,22 +54,40 @@ extension IMGeneralMessageViewController {
 // MARK: - Layout & constraints
 extension IMGeneralMessageViewController {
     
+    private struct Layout {
+        
+        struct TitleLabel {
+            static let top: CGFloat = 68.0
+            static let height: CGFloat = 100.0
+            static let width: CGFloat = 276.0
+            static let leading: CGFloat = 24.0
+        }
+        
+        struct MessageLabel {
+            static let top: CGFloat = 25.0
+            static let height: CGFloat = 60.0
+            static let leading: CGFloat = 24.0
+            static let trailing: CGFloat = 24.0
+        }
+        
+    }
+    
     private func addSubviews() {
         view.addSubview(titleLabel)
         view.addSubview(messageLabel)
         
-        var top: CGFloat = 0.0
+        var top: CGFloat = Layout.TitleLabel.top
         if #available(iOS 11.0, *) {
             if IMUtils.getDeviceType() == .iPhoneX {
-                top = 68.0 + view.safeAreaInsets.top
+                top = top + view.safeAreaInsets.top
             }
         }
         
-        view.addConstraintsWithFormat("H:|-24.0-[v0(276.0)]", views: titleLabel)
-        view.addConstraintsWithFormat("V:|-\(top)-[v0(100.0)]", views: titleLabel)
+        view.addConstraintsWithFormat("H:|-\(Layout.TitleLabel.leading)-[v0(\(Layout.TitleLabel.width))]", views: titleLabel)
+        view.addConstraintsWithFormat("V:|-\(top)-[v0(\(Layout.TitleLabel.height))]", views: titleLabel)
         
-        view.addConstraintsWithFormat("H:|-24.0-[v0]-24.0-|", views: messageLabel)
-        view.addConstraintsWithFormat("V:[v0]-25.0-[v1(60.0)]", views: titleLabel, messageLabel)
+        view.addConstraintsWithFormat("H:|-\(Layout.MessageLabel.leading)-[v0]-\(Layout.MessageLabel.trailing)-|", views: messageLabel)
+        view.addConstraintsWithFormat("V:[v0]-\(Layout.MessageLabel.top)-[v1(\(Layout.MessageLabel.height))]", views: titleLabel, messageLabel)
     }
     
 }

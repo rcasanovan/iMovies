@@ -58,10 +58,19 @@ extension IMSuggestionTableViewCell {
 // MARK: - Layout & constraints
 extension IMSuggestionTableViewCell {
     
+    private struct Layout {
+        
+        struct SuggestionsLabel {
+            static let leading: CGFloat = 16.0
+            static let trailing: CGFloat = 16.0
+        }
+        
+    }
+    
     private func addSubviews() {
         addSubview(suggestionLabel)
         
-        addConstraintsWithFormat("H:|-16.0-[v0]-16.0-|", views: suggestionLabel)
+        addConstraintsWithFormat("H:|-\(Layout.SuggestionsLabel.leading)-[v0]-\(Layout.SuggestionsLabel.trailing)-|", views: suggestionLabel)
         addConstraintsWithFormat("V:|[v0]|", views: suggestionLabel)
     }
     
