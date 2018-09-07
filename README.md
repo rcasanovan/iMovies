@@ -158,6 +158,12 @@ Used to manage the reachability
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/05.png?raw=true)
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/06.png?raw=true)
 
+## Programming languages && Development tools
+
+* Swift 4.1
+* Xcode 9.4.1
+* [Cocoapods](https://cocoapods.org) 1.5.3
+
 ## Third-Party Libraries
 
 * [Haneke](https://github.com/Haneke/Haneke) (1.0): A lightweight zero-config image cache for iOS
