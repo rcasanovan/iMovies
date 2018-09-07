@@ -197,6 +197,7 @@ extension IMSearchViewController: IMSearchViewInjection {
             // TODO: Scroll to top automatically
         }
         self.movies = movies
+        totalResultsView.isHidden = totalResults == 0
         totalResultsView.bindWithText("Total movies: \(totalResults)")
     }
     
