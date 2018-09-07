@@ -158,6 +158,14 @@ Used to manage the reachability
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/05.png?raw=true)
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/06.png?raw=true)
 
+## Third-Party Libraries
+
+* [Haneke](https://github.com/Haneke/Haneke) (1.0): A lightweight zero-config image cache for iOS
+* [EDStarRating](https://github.com/erndev/EDStarRating) (1.1): A configurable star rating control for OSX and iOS, similar to those found in iTunes and the App Store.
+* [RealmSwift](https://github.com/realm/realm-cocoa) (3.7.6): A mobile database that runs directly inside phones, tablets or wearables
+* [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD) (2.2.5): A clean and lightweight progress HUD for your iOS and tvOS app.
+* [ReachabilitySwift](https://github.com/ashleymills/Reachability.swift) (4.2.1): Replacement for Apple's Reachability re-written in Swift with callbacks.
+
 ## Support && contact
 
 ### Email
