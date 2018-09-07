@@ -51,6 +51,10 @@ struct IMSingleMovieResponse: Decodable {
 
 I'm using a Swift Standard Library decodable functionality in order to manage a type that can decode itself from an external representation (I really ❤ this from Swift).
 
+Why some properties are optionals?
+
+Well I discovered that some movies doesn't have a poster path or an overview (it's strange I know 🤷‍♂) so it's better to manage these fields are optionals.
+
 Reference: https://developer.apple.com/documentation/swift/swift_standard_library/encoding_decoding_and_serialization
 
 ## Search results
