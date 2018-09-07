@@ -27,7 +27,46 @@ Suggestions​ ​should​ ​be​ ​persisted.
 
 ## First at all. Where is the data came from?
 
-I'm using the api from **themoviedb.org** (you can check the api documentation [here](https://www.themoviedb.org/documentation/api))
+I'm using the api from **themoviedb.org** (you can check the api documentation [here](https://www.themoviedb.org/documentation/api)).
+
+You just need create an account to have access to the api. Once you do it you'll able to get information for movies in a JSON format like this:
+
+```json
+{
+  "page": 1,
+  "total_results": 102,
+  "total_pages": 6,
+  "results": [
+    {
+      "vote_count": 3107,
+      "id": 268,
+      "video": false,
+      "vote_average": 7.1,
+      "title": "Batman",
+      "popularity": 15.817,
+      "poster_path": "/kBf3g9crrADGMc2AMAMlLBgSm2h.jpg",
+      "original_language": "en",
+      "original_title": "Batman",
+      "genre_ids": [
+        14,
+        28
+      ],
+      "backdrop_path": "/2blmxp2pr4BhwQr74AdCfwgfMOb.jpg",
+      "adult": false,
+      "overview": "The Dark Knight of Gotham City begins his war on crime with his first major enemy being the clownishly homicidal Joker, who has seized control of Gotham's underworld.",
+      "release_date": "1989-06-23"
+    },
+    ...
+}
+```
+
+This is an example of the api call:
+http://api.themoviedb.org/3/search/movie?api_key=2696829a81b1b5827d515ff121700838&query=batman&page=1
+
+In order to get the images you can use this url:
+http://image.tmdb.org/t/p/w92/2DtPSyODKWXluIRV7PVru0SSzja.jpg​
+
+(Poster size: size:​ ​w92,​ ​w185,​ ​w500, w780)
 
 ## Data models
 
