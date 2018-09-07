@@ -56,6 +56,7 @@ You just need create an account to have access to the api. Once you do it you'll
       "overview": "The Dark Knight of Gotham City begins his war on crime with his first major enemy being the clownishly homicidal Joker, who has seized control of Gotham's underworld.",
       "release_date": "1989-06-23"
     }
+    ]
 }
 ```
 
