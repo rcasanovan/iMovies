@@ -27,6 +27,28 @@ Suggestions​ ​should​ ​be​ ​persisted.
 
 ## Data models
 
+### Network data models
+
+These includes the following models:
+
+```swift
+struct IMMoviesResponse: Decodable {
+    let page: UInt
+    let total_results: UInt
+    let total_pages: UInt
+    let results: [IMSingleMovieResponse]
+}
+
+struct IMSingleMovieResponse: Decodable {
+    let id: UInt
+    let vote_average: Float
+    let poster_path: String?
+    let title: String
+    let overview: String?
+    let release_date: String
+}
+```
+
 ## Search results
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/01.png?raw=true)
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/02.png?raw=true)
