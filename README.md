@@ -39,7 +39,7 @@ Suggestions​ ​should​ ​be​ ​persisted.
 
 I'm using the api from **themoviedb.org** (you can check the api documentation [here](https://www.themoviedb.org/documentation/api)).
 
-You just need create an account to have access to the api. Once you do it you'll able to get information for movies in a JSON format like this:
+You just need to create an account to have access to the api. Once you do it you'll able to get information for movies in a JSON format like this:
 
 ```json
 {
