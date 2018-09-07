@@ -27,6 +27,11 @@ class IMGeneralMessagePresenter {
 extension IMGeneralMessagePresenter: IMGeneralMessagePresenterDelegate {
     
     func viewDidLoad() {
+        switch type {
+        case .NoInternetConnection:
+            view?.load(title: "Without connection to the network.", message: "iMovies needs to connect to the internet.\nCheck the connections and try again.")
+            break
+        }
     }
     
 }
