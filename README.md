@@ -168,6 +168,12 @@ Used to manage the reachability
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/05.png?raw=true)
 ![alt tag](https://github.com/rcasanovan/iMovies/blob/master/Images/06.png?raw=true)
 
+## What's left in the demo?
+
+* Realm migration process: It would be nice to add a process to migrate the realm database to a new model (just in case you need to add a new field into the database)
+* Localizable files: This demo doesn't include the localizable files to translate the app to different languages.
+
+
 ## Programming languages && Development tools
 
 * Swift 4.1
