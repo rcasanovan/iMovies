@@ -337,14 +337,14 @@
 			path = "Movie Images";
 			sourceTree = "<group>";
 		};
-		C82AD7A8213E7013000EF9A4 /* Manager */ = {
+		C82AD7A8213E7013000EF9A4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				C82AD7D7213F1C27000EF9A4 /* Search Suggestions */,
 				C82AD7A9213E7030000EF9A4 /* IMMovieImageManager.swift */,
 				C8DD21B82142B13900FE4E80 /* IMNetworkManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		C82AD7B0213E8BF2000EF9A4 /* View Model */ = {
@@ -452,11 +452,11 @@
 		C8C54B81213D9F2500E8C5A0 /* iMovies */ = {
 			isa = PBXGroup;
 			children = (
-				C8C6B2FF2141B2DF00F7653B /* Utils */,
 				C82AD7AD213E7D33000EF9A4 /* iMovies-Bridging-Header.h */,
 				C8C54B82213D9F2500E8C5A0 /* AppDelegate.swift */,
 				C82AD77F213DA0D4000EF9A4 /* Views */,
-				C82AD7A8213E7013000EF9A4 /* Manager */,
+				C8C6B2FF2141B2DF00F7653B /* Utils */,
+				C82AD7A8213E7013000EF9A4 /* Managers */,
 				C82AD783213DA542000EF9A4 /* Extensions */,
 				C82AD787213DADB3000EF9A4 /* Network */,
 				C82AD7BC213EA074000EF9A4 /* Resources */,
