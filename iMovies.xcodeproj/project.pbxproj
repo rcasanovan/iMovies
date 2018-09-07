@@ -60,6 +60,7 @@
 		C8C6B3092141C6F100F7653B /* IMGeneralMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6B3082141C6F100F7653B /* IMGeneralMessageViewController.swift */; };
 		C8DD21B52142A04200FE4E80 /* IMGeneralMessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DD21B42142A04200FE4E80 /* IMGeneralMessagePresenter.swift */; };
 		C8DD21B72142A07600FE4E80 /* IMGeneralMessageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DD21B62142A07600FE4E80 /* IMGeneralMessageProtocols.swift */; };
+		C8DD21B92142B13900FE4E80 /* IMNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DD21B82142B13900FE4E80 /* IMNetworkManager.swift */; };
 		C8DF0BB7DB4CC03C507E8671 /* Pods_iMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EB7296C6701111E1B70B78 /* Pods_iMovies.framework */; };
 		C8FEDA8F214046ED00A54B23 /* IMBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FEDA8E214046ED00A54B23 /* IMBaseViewController.swift */; };
 /* End PBXBuildFile section */
@@ -137,6 +138,7 @@
 		C8C6B3082141C6F100F7653B /* IMGeneralMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGeneralMessageViewController.swift; sourceTree = "<group>"; };
 		C8DD21B42142A04200FE4E80 /* IMGeneralMessagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGeneralMessagePresenter.swift; sourceTree = "<group>"; };
 		C8DD21B62142A07600FE4E80 /* IMGeneralMessageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMGeneralMessageProtocols.swift; sourceTree = "<group>"; };
+		C8DD21B82142B13900FE4E80 /* IMNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMNetworkManager.swift; sourceTree = "<group>"; };
 		C8FEDA8E214046ED00A54B23 /* IMBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMBaseViewController.swift; sourceTree = "<group>"; };
 		D0331BA2DFB2B9E43C2257A2 /* Pods-iMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iMovies/Pods-iMovies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -340,6 +342,7 @@
 			children = (
 				C82AD7D7213F1C27000EF9A4 /* Search Suggestions */,
 				C82AD7A9213E7030000EF9A4 /* IMMovieImageManager.swift */,
+				C8DD21B82142B13900FE4E80 /* IMNetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -680,8 +683,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iMoviesTests/Pods-iMoviesTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EDStarRating/EDStarRating.framework",
-				"${BUILT_PRODUCTS_DIR}/FXReachability/FXReachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Haneke/Haneke.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -689,8 +692,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EDStarRating.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXReachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -708,8 +711,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iMovies/Pods-iMovies-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EDStarRating/EDStarRating.framework",
-				"${BUILT_PRODUCTS_DIR}/FXReachability/FXReachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Haneke/Haneke.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -717,8 +720,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EDStarRating.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXReachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -773,6 +776,7 @@
 				C80BD9EE213F2C83001B66EB /* IMSuggestionsView.swift in Sources */,
 				C82AD798213DB217000EF9A4 /* RequestProtocol.swift in Sources */,
 				C82AD79A213DB226000EF9A4 /* Result.swift in Sources */,
+				C8DD21B92142B13900FE4E80 /* IMNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@ def iMoviesPods
     pod 'SVProgressHUD', '~> 2.2.5'
     
     #Networking
-    pod 'FXReachability', '~> 1.3.2'
+    pod 'ReachabilitySwift', '~> 4.2.1'
     
 end
 

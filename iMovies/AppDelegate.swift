@@ -50,15 +50,13 @@ extension AppDelegate  {
     }
     
     private func addObservers() {
-        NotificationCenter.default.addObserver(self, selector:#selector(reachabilityStatusChanged), name: NSNotification.Name.FXReachabilityStatusDidChange, object: nil)
-    }
-    
-    @objc private func reachabilityStatusChanged(notification: Notification) {
-        guard let reachability = notification.object as? FXReachability else {
-            return
+        IMNetworkManager.shared.reachability.whenReachable = { reachability in
+            self.showReachabilityMessage(false)
         }
         
-        showReachabilityMessage(!reachability.isReachable)
+        IMNetworkManager.shared.reachability.whenUnreachable = { reachability in
+            self.showReachabilityMessage(true)
+        }
     }
     
     private func showReachabilityMessage(_ show: Bool) {

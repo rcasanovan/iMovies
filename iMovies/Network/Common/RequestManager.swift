@@ -29,7 +29,7 @@ class RequestManager {
     }
     
     var isConnected: Bool {
-        return FXReachability.isReachable()
+        return IMNetworkManager.shared.reachability.connection != .none
     }
     
     func send<T: RequestProtocol>(request: T, after: TimeInterval) {

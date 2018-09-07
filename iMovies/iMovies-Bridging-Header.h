@@ -12,6 +12,5 @@
 #import <Haneke/Haneke.h>
 #import <EDStarRating/EDStarRating.h>
 #import <SVProgressHUD/SVProgressHUD.h>
-#import <FXReachability/FXReachability.h>
 
 #endif /* iMovies_Bridging_Header_h */
