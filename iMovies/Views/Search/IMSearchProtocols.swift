@@ -21,7 +21,6 @@ protocol IMSearchPresenterDelegate : class {
     func loadNextPage()
     func getSuggestions()
     func suggestionSelectedAt(index: NSInteger)
-    func reachabilityStatusChanged()
 }
 
 // Presenter / Interactor
@@ -36,10 +35,4 @@ protocol IMSearchInteractorDelegate : class {
     func saveSearch(_ search: String)
     func getAllSuggestions(completion: @escaping IMGetSuggestionsCompletionBlock)
     func updateResultResponse(_ response: IMMoviesResponse?)
-}
-
-// Presenter / Router
-
-protocol IMSearchRouterDelegate : class {
-    func showReachabilityStatus(show: Bool)
 }

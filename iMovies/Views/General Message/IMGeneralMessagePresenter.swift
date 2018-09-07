@@ -8,12 +8,18 @@
 
 import Foundation
 
+enum IMGeneralMessageType {
+    case NoInternetConnection
+}
+
 class IMGeneralMessagePresenter {
     
     private weak var view: IMGeneralMessageViewInjection?
+    private let type: IMGeneralMessageType
     
-    init(view: IMGeneralMessageViewInjection) {
+    init(view: IMGeneralMessageViewInjection, type: IMGeneralMessageType) {
         self.view = view
+        self.type = type
     }
     
 }
