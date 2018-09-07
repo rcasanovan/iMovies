@@ -2,7 +2,7 @@
 
 This is a project to create a simple app to search movies
 
-## Important note
+## 🚨 Important note 🚨
 
 This project is using cocoapods but a gitignore file is there so the third-party libraries are not part of the repo. Please be sure to run the **pod install** command before running the project.
 
