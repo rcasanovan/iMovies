@@ -54,6 +54,9 @@ class IMMovieTableViewCell: UITableViewCell {
 // MARK: - Setup views
 extension IMMovieTableViewCell {
     
+    /**
+     * SetupViews
+     */
     private func setupViews() {
         backgroundColor = .clear
         
@@ -61,6 +64,9 @@ extension IMMovieTableViewCell {
         addSubviews()
     }
     
+    /**
+     * ConfigureSubviews
+     */
     private func configureSubviews() {
         backgroundImageView.frame = self.bounds
         backgroundImageView.backgroundColor = .clear
@@ -94,6 +100,9 @@ extension IMMovieTableViewCell {
         overviewLabel.numberOfLines = 0
     }
     
+    /**
+     * Configure movie information
+     */
     private func configureInformation() {
         guard let viewModel = viewModel else {
             return
@@ -108,6 +117,9 @@ extension IMMovieTableViewCell {
         overviewLabel.text = overview
     }
     
+    /**
+     * Configure background image
+     */
     private func configureBackgroundImage() {
         guard let url = viewModel?.largeUrlImage else {
             return
@@ -122,6 +134,9 @@ extension IMMovieTableViewCell {
         }
     }
     
+    /**
+     * Configure poster image
+     */
     private func configurePosterImage() {
         guard let url = viewModel?.smallUrlImage else {
             return
@@ -134,6 +149,9 @@ extension IMMovieTableViewCell {
 // MARK: - Layout & constraints
 extension IMMovieTableViewCell {
     
+    /**
+     * Internal struct for layout
+     */
     private struct Layout {
         
         struct PosterImageView {
@@ -173,6 +191,9 @@ extension IMMovieTableViewCell {
         }
     }
     
+    /**
+     * Add subviews
+     */
     private func addSubviews() {
         addSubview(backgroundImageView)
         
