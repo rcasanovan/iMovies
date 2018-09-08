@@ -71,10 +71,16 @@ extension IMSearchViewController {
         setupDatasource()
     }
     
+    /**
+     * Register all the cells we need
+     */
     private func registerCells() {
         moviesTableView?.register(IMMovieTableViewCell.self, forCellReuseIdentifier: IMMovieTableViewCell.identifier)
     }
     
+    /**
+     * Setup datasource for the movies table view
+     */
     private func setupDatasource() {
         if let moviesTableView = moviesTableView {
             datasource = IMSearchDataSource()
@@ -82,6 +88,9 @@ extension IMSearchViewController {
         }
     }
     
+    /**
+     * Add observers to the view
+     */
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeAppear), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: .UIKeyboardWillHide, object: nil)
@@ -89,8 +98,15 @@ extension IMSearchViewController {
     
 }
 
+// MARK: - Keyboard actions
 extension IMSearchViewController {
     
+    /**
+     * Control the keyboard will appear action
+     *
+     * - parameters:
+     *      -notification: notification from the keyboard
+     */
     @objc private func keyboardWillBeAppear(notification: NSNotification) {
         guard let info:[AnyHashable:Any] = notification.userInfo,
             let keyboardSize:CGSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size else { return }
@@ -98,6 +114,12 @@ extension IMSearchViewController {
         showSuggestions(show: true, height: -keyboardSize.height, animated: true)
     }
     
+    /**
+     * Control the keyboard will be hidden action
+     *
+     * - parameters:
+     *      -notification: notification from the keyboard
+     */
     @objc private func keyboardWillBeHidden(notification: NSNotification) {
         showSuggestions(show: false, height: 0.0, animated: true)
     }
@@ -107,21 +129,46 @@ extension IMSearchViewController {
 // MARK: - Layout & constraints
 extension IMSearchViewController {
     
+    /**
+     * Internal struc for layout
+     */
+    private struct Layout {
+        
+        struct Scroll {
+            static let percentagePosition: Double = 75.0
+        }
+        
+    }
+    
+    /**
+     * Internal struc for animation
+     */
+    private struct Animation {
+        
+        static let animationDuration: TimeInterval = 0.25
+        
+    }
+    
+    /**
+     * Add subviews
+     */
     private func addSubviews() {
         view.addSubview(searchView)
         view.addSubview(totalResultsView)
         view.addSubview(moviesContainerView)
         view.addSubview(suggestionsView)
         
+        // Add validation for iPhone X
         var top: CGFloat = 0.0
         var bottom: CGFloat = 0.0
         if #available(iOS 11.0, *) {
+            // If we´re running iOS 11 && device type == iPhone X
+            // -> use the save area insets
             if IMUtils.getDeviceType() == .iPhoneX {
                 top = view.safeAreaInsets.top
                 bottom = view.safeAreaInsets.bottom
             }
         }
-        
         
         view.addConstraintsWithFormat("H:|[v0]|", views: searchView)
         view.addConstraintsWithFormat("V:|-\(top)-[v0(\(searchView.getHeight()))]", views: searchView)
@@ -145,8 +192,16 @@ extension IMSearchViewController {
         self.suggestionsViewBottomConstraint = suggestionsViewBottomConstraint
     }
     
+    /**
+     * Show suggestions
+     *
+     * - parameters:
+     *      -show: show / hide the suggestions
+     *      -height: the height for the suggestions content
+     *      -animated: show / hide suggestions with animation or not
+     */
     private func showSuggestions(show: Bool, height: CGFloat, animated: Bool) {
-        let animateDuration = animated ? 0.25 : 0;
+        let animateDuration = animated ? Animation.animationDuration : 0;
         suggestionsViewBottomConstraint?.constant = height
         suggestionsView.isHidden = !show
         UIView.animate(withDuration: animateDuration) {
@@ -154,25 +209,35 @@ extension IMSearchViewController {
         }
     }
     
+    /**
+     * Scroll to top
+     */
     private func scrollToTop() {
         moviesTableView?.setContentOffset(.zero, animated: false)
     }
     
 }
 
+// MARK: - UITableViewDelegate
 extension IMSearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let position = Int(((75.0 * Double(movies.count - 1)) / 100.0))
+        // Get the position for a percentage of the scrolling
+        // In this case we got the positions for the 75%
+        let position = Int(((Layout.Scroll.percentagePosition * Double(movies.count - 1)) / 100.0))
         
+        // if we're not loading a next page && we´re in the 75% position
         if !self.isLoadingNextPage && indexPath.item == position {
+            // Change the value -> We're loading the next page
             self.isLoadingNextPage = true
+            // Call the presenter
             presenter?.loadNextPage()
         }
     }
     
 }
 
+// MARK: - IMSearchViewDelegate
 extension IMSearchViewController: IMSearchViewDelegate {
     
     func searchButtonPressedWithSearch(search: String?) {
@@ -184,6 +249,7 @@ extension IMSearchViewController: IMSearchViewDelegate {
     
 }
 
+// MARK: - IMSuggestionsViewDelegate
 extension IMSearchViewController: IMSuggestionsViewDelegate {
     
     func suggestionSelectedAt(index: NSInteger) {
@@ -196,7 +262,16 @@ extension IMSearchViewController: IMSuggestionsViewDelegate {
 
 extension IMSearchViewController: IMSearchViewInjection {
     
+    /**
+     * Load the movies in the UI
+     *
+     * - parameters:
+     *      -movies: movies to be loaded
+     *      -fromBeginning: show the fist page results or not
+     *      -totalResults: total results for the search
+     */
     func loadMovies(_ movies: [IMMovieViewModel], fromBeginning: Bool, totalResults: UInt) {
+        // Are we loading the movies from the beginning? -> scroll to top
         if fromBeginning {
             scrollToTop()
         }
@@ -205,14 +280,34 @@ extension IMSearchViewController: IMSearchViewInjection {
         totalResultsView.bindWithText("Total movies: \(totalResults)")
     }
     
+    /**
+     * Load suggestions in the UI
+     *
+     * - parameters:
+     *      -suggestions: all suggestions to load
+     */
     func loadSuggestions(_ suggestions: [IMSuggestionViewModel]) {
         suggestionsView.suggestions = suggestions
     }
     
+    /**
+     * Show progress
+     *
+     * - parameters:
+     *      -show: show progress or not
+     */
     func showProgress(_ show: Bool) {
         showLoader(show)
     }
     
+    /**
+     * Show alert
+     *
+     * - parameters:
+     *      -title: title for the message
+     *      -message: message to show
+     *      -actionTitle: action title for the alert
+     */
     func showMessageWith(title: String, message: String, actionTitle: String) {
         showAlertWith(title: title, message: message, actionTitle: actionTitle)
     }
