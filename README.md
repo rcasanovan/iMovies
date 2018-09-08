@@ -15,6 +15,47 @@ References:
 * [Viper architecture](https://www.objc.io/issues/13-architecture/viper/)
 * [Viper for iOS](https://medium.com/@smalam119/viper-design-pattern-for-ios-application-development-7a9703902af6)
 
+## How did I implement VIPER?
+
+Basically I hava a protocol file for each scene in the app. This file defines the interaction between each layer as following:
+
+* View - Presenter: protocols to notify changes and to inject information to the UI.
+* Presenter - Interactor: protocols to request / receive information to / from the interator.
+* Presenter - Router: protocol to define the transitions between scenes (I skiped this protocols for the demo because I have only a scene there).
+
+Whith this protocols file is really easy to know how each layer notify / request / information to the other ones so we don't have any other way to communicate all the layers.
+
+```swift
+// View / Presenter
+protocol IMSearchViewInjection : class {
+    func loadMovies(_ movies: [IMMovieViewModel], fromBeginning: Bool, totalResults: UInt)
+    func loadSuggestions(_ suggestions: [IMSuggestionViewModel])
+    func showProgress(_ show: Bool)
+    func showMessageWith(title: String, message: String, actionTitle: String)
+}
+
+protocol IMSearchPresenterDelegate : class {
+    func searchMovie(_ movie: String)
+    func loadNextPage()
+    func getSuggestions()
+    func suggestionSelectedAt(index: NSInteger)
+}
+
+// Presenter / Interactor
+
+typealias IMGetMoviesCompletionBlock = (Result<IMMoviesResponse?>) -> Void
+typealias IMGetSuggestionsCompletionBlock = ([IMSuggestionViewModel]) -> Void
+
+protocol IMSearchInteractorDelegate : class {
+    func shouldGetMovies() -> Bool
+    func clearSearch()
+    func getMoviesWith(movie: String, completion: @escaping IMGetMoviesCompletionBlock)
+    func saveSearch(_ search: String)
+    func getAllSuggestions(completion: @escaping IMGetSuggestionsCompletionBlock)
+    func updateResultResponse(_ response: IMMoviesResponse?)
+}
+```
+
 ## Use cases
 
 1. As​ ​a​ ​user​ ​at​ ​the​ ​search​ ​screen, when​ ​I​ ​enter​ ​a​ ​name​ ​of​ ​a​ ​movie​ ​(e.g.​ ​"Batman",​ ​"Rocky")​ ​in​ ​the​ ​search​ ​box​ ​and tap​ ​on​ ​"search​ ​button" then​ ​I​ ​should​ ​see​ ​a​ ​new​ ​list​ ​view​ ​with​ ​the​ ​following​ ​rows:
