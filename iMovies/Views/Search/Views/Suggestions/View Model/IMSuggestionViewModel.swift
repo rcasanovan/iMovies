@@ -16,33 +16,18 @@ struct IMSuggestionViewModel {
         self.suggestion = suggestion
     }
     
+    /**
+     * Get the view models with a IMSearchSuggestion array
+     */
     public static func getViewModelsWith(suggestions: [IMSearchSuggestion]) -> [IMSuggestionViewModel] {
         return suggestions.map { getViewModelWith(suggestion: $0) }
     }
     
+    /**
+     * Get a single view model with a IMSearchSuggestion
+     */
     public static func getViewModelWith(suggestion: IMSearchSuggestion) -> IMSuggestionViewModel {
         return IMSuggestionViewModel.init(suggestion: suggestion.suggestion)
-    }
-    
-    public static func getDemoViewModels() -> [IMSuggestionViewModel] {
-        var suggestions: [IMSuggestionViewModel] = [IMSuggestionViewModel]()
-        suggestions.append(IMSuggestionViewModel(suggestion: "batman"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "superman"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "star wars"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "back to the future"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "batman"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "superman"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "star wars"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "back to the future"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "batman"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "superman"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "star wars"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "back to the future"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "batman"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "superman"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "star wars"))
-        suggestions.append(IMSuggestionViewModel(suggestion: "back to the future"))
-        return suggestions
     }
     
 }
