@@ -222,6 +222,7 @@ Used to manage the reachability
 * Swift 4.1
 * Xcode 9.4.1
 * [Cocoapods](https://cocoapods.org) 1.5.3
+* Minimun iOS version: 9.0
 
 ## Third-Party Libraries
 
