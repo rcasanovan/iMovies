@@ -17,13 +17,15 @@ References:
 
 ## How did I implement VIPER?
 
-Basically I hava a protocol file for each scene in the app. This file defines the interaction between each layer as following:
+Basically I have a protocol file for each scene in the app. This file defines the interaction between each layer as following:
 
 * View - Presenter: protocols to notify changes and to inject information to the UI.
 * Presenter - Interactor: protocols to request / receive information to / from the interator.
 * Presenter - Router: protocol to define the transitions between scenes (I skiped this protocols for the demo because I have only a scene there).
 
 Whith this protocols file is really easy to know how each layer notify / request / information to the other ones so we don't have any other way to communicate all the layers.
+
+Another important point is because I'm using protocols it's really easy to define mocks views / presenters / interactors / routers for testing.
 
 ```swift
 // View / Presenter
