@@ -39,6 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //MARK: - Navigation methods
 extension AppDelegate  {
     
+    /**
+     * Show initial view controller
+     */
     private func showInitialViewController() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
@@ -49,6 +52,9 @@ extension AppDelegate  {
         self.window?.makeKeyAndVisible()
     }
     
+    /**
+     * Add observers
+     */
     private func addObservers() {
         IMNetworkManager.shared.reachability.whenReachable = { reachability in
             self.showReachabilityMessage(false)
@@ -59,6 +65,12 @@ extension AppDelegate  {
         }
     }
     
+    /**
+     * Show reachability message
+     *
+     * - parameters:
+     *      -show: show / hide reachability message
+     */
     private func showReachabilityMessage(_ show: Bool) {
         guard let rootViewController = UIApplication.shared.windows[0].rootViewController else {
             return
