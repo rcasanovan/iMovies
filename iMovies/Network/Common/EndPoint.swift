@@ -13,22 +13,21 @@ protocol EndpointProtocol: RawRepresentable where RawValue == String {
     var url: URL? { get }
 }
 
-//enum Endpoint: String, EndpointProtocol {
-//    case search = "/search"
-//
-//    // MARK: - Search Endpoint
-//    enum searchMovie: EndpointProtocol {
-//
-//        var rawValue: String {
-//            switch self {
-//            case .search(let movie, let page):
-//                return "search/movie?api_key=e579f9a644180d2a8887223f0d0ad5ff&quey=\(movie)&page=\(page)"
-//            }
-//        }
-//
-//        case search(movie: String, page: UInt)
-//    }
-//}
+/**
+ * Internal struct for Url
+ */
+private struct Url {
+    
+    static let baseUrl: String = "http://api.themoviedb.org/3"
+    static let apiKey: String = "e579f9a644180d2a8887223f0d0ad5ff"
+    
+    struct Fields {
+        static let apiKey: String = "api_key"
+        static let query: String = "query"
+        static let page: String = "page"
+    }
+    
+}
 
 // MARK: - Search Endpoint
 enum Endpoint: EndpointProtocol {
@@ -37,9 +36,9 @@ enum Endpoint: EndpointProtocol {
         switch self {
         case .searchMovie(let movie, let page):
             guard let movieUrlFormat = movie.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else {
-                return "/search/movie?api_key=e579f9a644180d2a8887223f0d0ad5ff&page=\(page)"
+                return "/search/movie?\(Url.Fields.apiKey)=\(Url.apiKey)&\(Url.Fields.page)=\(page)"
             }
-            return "/search/movie?api_key=e579f9a644180d2a8887223f0d0ad5ff&query=\(movieUrlFormat)&page=\(page)"
+            return "/search/movie?\(Url.Fields.apiKey)=\(Url.apiKey)&\(Url.Fields.query)=\(movieUrlFormat)&\(Url.Fields.page)=\(page)"
         }
     }
     
@@ -59,6 +58,6 @@ extension EndpointProtocol {
     }
     
     static var baseUrl: String {
-        return "http://api.themoviedb.org/3"
+        return Url.baseUrl
     }
 }

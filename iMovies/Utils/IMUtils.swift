@@ -17,6 +17,9 @@ public enum IMDeviceType {
 
 class IMUtils {
     
+    /**
+     * Internal struct for device height
+     */
     private struct DeviceHeight {
         
         static let iPhoneSE: CGFloat = 568.0
@@ -26,14 +29,23 @@ class IMUtils {
         
     }
     
+    /**
+     * Get the screen width
+     */
     public static func screenWidth() -> CGFloat {
         return UIScreen.main.bounds.size.width
     }
     
+    /**
+     * Get the screen height
+     */
     public static func screenHeight() -> CGFloat {
         return UIScreen.main.bounds.size.height
     }
     
+    /**
+     * Get the device type
+     */
     public static func getDeviceType() -> IMDeviceType {
         let screenHeight = self.screenHeight()
         var deviceType = IMDeviceType.iPhoneSE
