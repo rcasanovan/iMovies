@@ -39,7 +39,7 @@ class IMNetworkTests: XCTestCase {
                     return
                 }
                 
-                XCTAssertTrue(count > 0, "We're not movies releated. Really?")
+                XCTAssertTrue(count > 0, "We don't have movies releated. Really?")
                 break
             case .failure(let error):
                 XCTFail(error.localizedDescription)

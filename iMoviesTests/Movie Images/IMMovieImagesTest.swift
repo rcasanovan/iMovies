@@ -28,19 +28,19 @@ class IMMovieImagesTest: XCTestCase {
     }
     
     func testGetMediumImageUrl() {
-        guard let smalImageUrl = IMMovieImageManager.getMediumImageUrlWith("/pTpxQB1N0waaSc3OSn0e9oc8kx9.jpg")  else {
+        guard let mediumImageUrl = IMMovieImageManager.getMediumImageUrlWith("/pTpxQB1N0waaSc3OSn0e9oc8kx9.jpg")  else {
             XCTFail("impossible to get the url")
             return
         }
-        XCTAssertEqual("http://image.tmdb.org/t/p/w185/pTpxQB1N0waaSc3OSn0e9oc8kx9.jpg", smalImageUrl.absoluteString)
+        XCTAssertEqual("http://image.tmdb.org/t/p/w185/pTpxQB1N0waaSc3OSn0e9oc8kx9.jpg", mediumImageUrl.absoluteString)
     }
     
     func testGetLargeImageUrl() {
-        guard let smalImageUrl = IMMovieImageManager.getLargeImageUrlWith("/pTpxQB1N0waaSc3OSn0e9oc8kx9.jpg")  else {
+        guard let largeImageUrl = IMMovieImageManager.getLargeImageUrlWith("/pTpxQB1N0waaSc3OSn0e9oc8kx9.jpg")  else {
             XCTFail("impossible to get the url")
             return
         }
-        XCTAssertEqual("http://image.tmdb.org/t/p/w500/pTpxQB1N0waaSc3OSn0e9oc8kx9.jpg", smalImageUrl.absoluteString)
+        XCTAssertEqual("http://image.tmdb.org/t/p/w500/pTpxQB1N0waaSc3OSn0e9oc8kx9.jpg", largeImageUrl.absoluteString)
     }
     
 }
