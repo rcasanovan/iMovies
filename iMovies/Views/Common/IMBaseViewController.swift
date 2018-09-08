@@ -22,10 +22,24 @@ class IMBaseViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
+    /**
+     * Show loader
+     *
+     * - parameters:
+     *      -show: show / hide the loader
+     */
     public func showLoader(_ show: Bool) {
         show == true ? SVProgressHUD.show() : SVProgressHUD.dismiss()
     }
     
+    /**
+     * Show alert
+     *
+     * - parameters:
+     *      -title: title for the aler
+     *      -message: message for the alert
+     *      -actionTitle: action title for the alert
+     */
     public func showAlertWith(title: String, message: String, actionTitle: String) {
         let alertController = UIAlertController(
             title: title,
