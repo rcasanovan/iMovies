@@ -49,8 +49,8 @@ extension IMSearchPresenter {
                 // If we get the movies -> process the results
                 self.processMoviesResults(movieSearch: movie, movies: movies, showProgress: showProgress)
                 break
-            case .failure(_):
-                print("failure")
+            case .failure(let error):
+                self.view?.showMessageWith(title: "Oops", message: error.localizedDescription, actionTitle: "Accept")
                 break
             }
         }
