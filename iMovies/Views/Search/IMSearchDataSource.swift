@@ -10,6 +10,7 @@ import Foundation
 
 class IMSearchDataSource: NSObject {
     
+    // Movies to inject to the table view
     public var movies: [IMMovieViewModel]
     
     public override init() {
@@ -19,6 +20,7 @@ class IMSearchDataSource: NSObject {
     
 }
 
+// MARK: - UITableViewDataSource
 extension IMSearchDataSource: UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,6 +32,7 @@ extension IMSearchDataSource: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        // Get the view model and bind the cell with the information
         let viewModel = movies[indexPath.row]
         cell.bindWithViewModel(viewModel)
         

@@ -260,6 +260,7 @@ extension IMSearchViewController: IMSuggestionsViewDelegate {
     
 }
 
+// MARK: - IMSearchViewInjection
 extension IMSearchViewController: IMSearchViewInjection {
     
     /**
