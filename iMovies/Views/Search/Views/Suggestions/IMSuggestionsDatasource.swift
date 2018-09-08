@@ -10,6 +10,7 @@ import Foundation
 
 class IMSuggestionsDatasource: NSObject {
     
+    // Suggestions to inject to the table view
     public var suggestions: [IMSuggestionViewModel]
     
     public override init() {
@@ -19,6 +20,7 @@ class IMSuggestionsDatasource: NSObject {
     
 }
 
+// MARK: - UITableViewDataSource
 extension IMSuggestionsDatasource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,6 +32,7 @@ extension IMSuggestionsDatasource: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        // Get the view model and bind the cell with the information
         let viewModel = suggestions[indexPath.row]
         cell.bindWithViewModel(viewModel)
         

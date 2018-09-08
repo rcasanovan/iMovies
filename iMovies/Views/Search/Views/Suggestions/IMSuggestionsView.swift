@@ -45,6 +45,9 @@ class IMSuggestionsView: UIView {
 // MARK: - Setup views
 extension IMSuggestionsView {
     
+    /**
+     * SetupViews
+     */
     private func setupViews() {
         backgroundColor = .white
         
@@ -52,6 +55,9 @@ extension IMSuggestionsView {
         addSubviews()
     }
     
+    /**
+     * ConfigureSubviews
+     */
     private func configureSubviews() {
         suggestionsTableView = UITableView(frame: self.bounds, style: .plain)
         suggestionsTableView?.tableFooterView = UIView()
@@ -68,10 +74,16 @@ extension IMSuggestionsView {
         noSuggestionsLabel.text = "No suggestions"
     }
     
+    /**
+     * Register all the cells we need
+     */
     private func registerCells() {
         suggestionsTableView?.register(IMSuggestionTableViewCell.self, forCellReuseIdentifier: IMSuggestionTableViewCell.identifier)
     }
     
+    /**
+     * Setup datasource for the suggestions table view
+     */
     private func setupDatasource() {
         if let suggestionsTableView = suggestionsTableView {
             datasource = IMSuggestionsDatasource()
@@ -84,6 +96,9 @@ extension IMSuggestionsView {
 // MARK: - Layout & constraints
 extension IMSuggestionsView {
     
+    /**
+     * Internal struct for layout
+     */
     private struct Layout {
         
         struct NoSuggestionsLabel {
@@ -92,6 +107,9 @@ extension IMSuggestionsView {
         
     }
     
+    /**
+     * Add subviews
+     */
     private func addSubviews() {
         addSubview(noSuggestionsLabel)
         
@@ -111,6 +129,7 @@ extension IMSuggestionsView {
     
 }
 
+// MARK: - UITableViewDelegate
 extension IMSuggestionsView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

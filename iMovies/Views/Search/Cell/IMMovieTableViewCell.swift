@@ -42,7 +42,13 @@ class IMMovieTableViewCell: UITableViewCell {
         releaseDateLabel.text = ""
         overviewLabel.text = ""
     }
-        
+    
+    /**
+     * Bind component
+     *
+     * - parameters:
+     *      -viewModel: IMMovieViewModel
+     */
     public func bindWithViewModel(_ viewModel: IMMovieViewModel) {
         self.viewModel = viewModel
         configureInformation()

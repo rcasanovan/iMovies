@@ -45,6 +45,9 @@ class IMSearchViewController: IMBaseViewController {
 // MARK: - Setup views
 extension IMSearchViewController {
     
+    /**
+     * SetupViews
+     */
     private func setupViews() {
         view.backgroundColor = .black
         
@@ -53,6 +56,9 @@ extension IMSearchViewController {
         showSuggestions(show: false, height: 0.0, animated: false)
     }
 
+    /**
+     * ConfigureSubviews
+     */
     private func configureSubviews() {
         searchView.delegate = self
         
@@ -130,7 +136,7 @@ extension IMSearchViewController {
 extension IMSearchViewController {
     
     /**
-     * Internal struc for layout
+     * Internal struct for layout
      */
     private struct Layout {
         
@@ -141,7 +147,7 @@ extension IMSearchViewController {
     }
     
     /**
-     * Internal struc for animation
+     * Internal struct for animation
      */
     private struct Animation {
         

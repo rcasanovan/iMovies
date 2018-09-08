@@ -34,10 +34,16 @@ class IMSearchView: UIView {
         setupViews()
     }
     
+    /**
+     * Get component's height
+     */
     public func getHeight() -> CGFloat {
         return Layout.height
     }
     
+    /**
+     * Hide keyboard
+     */
     public func hideKeyboard() {
         searchBar.resignFirstResponder()
         showCancel(show: false, animated: true)
@@ -73,6 +79,9 @@ extension IMSearchView {
 // MARK: - Layout & constraints
 extension IMSearchView {
     
+    /**
+     * Internal struct for layout
+     */
     private struct Layout {
         
         static let height: CGFloat = 46.0
@@ -92,6 +101,18 @@ extension IMSearchView {
         
     }
     
+    /**
+     * Internal struct for animation
+     */
+    private struct Animation {
+        
+        static let animationDuration: TimeInterval = 0.45
+        
+    }
+    
+    /**
+     * Add subviews
+     */
     private func addSubviews() {
         addSubview(searchContainerView)
         addSubview(cancelButton)
@@ -113,8 +134,15 @@ extension IMSearchView {
         searchContainerView.addConstraintsWithFormat("V:|[v0]|", views: searchBar)
     }
     
+    /**
+     * Show / hide cancel action
+     *
+     * - parameters:
+     *      -show: show / hide the cancel action
+     *      -animated: show / hide cancel action with animation or not
+     */
     private func showCancel(show: Bool, animated: Bool) {
-        let animateDuration = animated ? 0.45 : 0;
+        let animateDuration = animated ? Animation.animationDuration : 0;
         cancelButtonWidthConstraint?.constant = show ? Layout.CancelButton.width : 0.0;
         searchContainerViewTrailingConstraint?.constant = show ? Layout.SearchContainerView.trailingSelected : Layout.SearchContainerView.trailing;
         
@@ -129,6 +157,7 @@ extension IMSearchView {
     
 }
 
+// MARK: - UISearchBarDelegate
 extension IMSearchView: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -147,6 +176,7 @@ extension IMSearchView: UISearchBarDelegate {
     
 }
 
+// MARK: - User actions
 extension IMSearchView {
     
     @objc private func cancelButtonPressed() {

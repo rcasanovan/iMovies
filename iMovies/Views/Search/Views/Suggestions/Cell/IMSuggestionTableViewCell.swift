@@ -31,6 +31,12 @@ class IMSuggestionTableViewCell: UITableViewCell {
         suggestionLabel.text = ""
     }
     
+    /**
+     * Bind component
+     *
+     * - parameters:
+     *      -viewModel: IMSuggestionViewModel
+     */
     public func bindWithViewModel(_ viewModel: IMSuggestionViewModel) {
         suggestionLabel.text = viewModel.suggestion
     }
@@ -39,6 +45,9 @@ class IMSuggestionTableViewCell: UITableViewCell {
 // MARK: - Setup views
 extension IMSuggestionTableViewCell {
     
+    /**
+     * SetupViews
+     */
     private func setupViews() {
         backgroundColor = .clear
         
@@ -46,6 +55,9 @@ extension IMSuggestionTableViewCell {
         addSubviews()
     }
     
+    /**
+     * ConfigureSubviews
+     */
     private func configureSubviews() {
         suggestionLabel.font = UIFont.mediumWithSize(size: 17.0)
         suggestionLabel.textColor = .black
@@ -58,6 +70,9 @@ extension IMSuggestionTableViewCell {
 // MARK: - Layout & constraints
 extension IMSuggestionTableViewCell {
     
+    /**
+     * Internal struct for layout
+     */
     private struct Layout {
         
         struct SuggestionsLabel {
@@ -67,6 +82,9 @@ extension IMSuggestionTableViewCell {
         
     }
     
+    /**
+     * Add subviews
+     */
     private func addSubviews() {
         addSubview(suggestionLabel)
         

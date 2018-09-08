@@ -22,6 +22,9 @@ class IMTotalResultsView: UIView {
         setupViews()
     }
     
+    /**
+     * Get component's height
+     */
     public func getHeight() -> CGFloat {
         return Layout.height
     }
@@ -31,6 +34,9 @@ class IMTotalResultsView: UIView {
 // MARK: - Setup views
 extension IMTotalResultsView {
     
+    /**
+     * SetupViews
+     */
     private func setupViews() {
         backgroundColor = .black
         
@@ -38,12 +44,21 @@ extension IMTotalResultsView {
         addSubviews()
     }
     
+    /**
+     * ConfigureSubviews
+     */
     private func configureSubviews() {
         totalResultsLabel.font = UIFont.boldWithSize(size: 14.0)
         totalResultsLabel.textAlignment = .center
         totalResultsLabel.textColor = .white
     }
     
+    /**
+     * Bind component
+     *
+     * - parameters:
+     *      -text: text for the total results
+     */
     public func bindWithText(_ text: String) {
         totalResultsLabel.text = text
     }
@@ -53,12 +68,18 @@ extension IMTotalResultsView {
 // MARK: - Layout & constraints
 extension IMTotalResultsView {
     
+    /**
+     * Internal struct for layout
+     */
     private struct Layout {
         
         static let height: CGFloat = 30.0
         
     }
     
+    /**
+     * Add subviews
+     */
     private func addSubviews() {
         addSubview(totalResultsLabel)
         
