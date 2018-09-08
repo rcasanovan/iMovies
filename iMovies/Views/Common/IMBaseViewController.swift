@@ -54,4 +54,30 @@ class IMBaseViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    /**
+     * Determinate if we need to use the safe area insets
+     */
+    public func useSafeAreaInsets() -> Bool {
+        if #available(iOS 11.0, *) {
+            // If we´re running iOS 11 && device type == iPhone X
+            // -> use the save area insets
+            if IMUtils.getDeviceType() == .iPhoneX {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    /**
+     * Get the safe area insets
+     */
+    public func getSafeAreaInsets() -> UIEdgeInsets {
+        if #available(iOS 11.0, *) {
+            return view.safeAreaInsets
+        }
+        
+        return .zero
+    }
+    
 }

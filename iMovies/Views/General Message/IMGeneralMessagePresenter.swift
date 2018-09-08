@@ -8,6 +8,10 @@
 
 import Foundation
 
+/**
+ * Enum to manage all the possible messages types
+ * For now I'm using only NoInternetConnection type but it's possible to extend this in the future
+ */
 enum IMGeneralMessageType {
     case NoInternetConnection
 }
@@ -26,6 +30,9 @@ class IMGeneralMessagePresenter {
 
 extension IMGeneralMessagePresenter: IMGeneralMessagePresenterDelegate {
     
+    /**
+     * View did load
+     */
     func viewDidLoad() {
         switch type {
         case .NoInternetConnection:

@@ -30,6 +30,9 @@ class IMGeneralMessageViewController: IMBaseViewController {
 // MARK: - Setup views
 extension IMGeneralMessageViewController {
     
+    /**
+     * SetupViews
+     */
     private func setupViews() {
         view.backgroundColor = .black
         
@@ -37,6 +40,9 @@ extension IMGeneralMessageViewController {
         addSubviews()
     }
     
+    /**
+     * ConfigureSubviews
+     */
     private func configureSubviews() {
         titleLabel.font = UIFont.boldWithSize(size: 40.0)
         titleLabel.textColor = .white
@@ -54,6 +60,9 @@ extension IMGeneralMessageViewController {
 // MARK: - Layout & constraints
 extension IMGeneralMessageViewController {
     
+    /**
+     * Internal struct for layout
+     */
     private struct Layout {
         
         struct TitleLabel {
@@ -72,15 +81,17 @@ extension IMGeneralMessageViewController {
         
     }
     
+    /**
+     * Add subviews
+     */
     private func addSubviews() {
         view.addSubview(titleLabel)
         view.addSubview(messageLabel)
         
+        // Add validation for iPhone X
         var top: CGFloat = Layout.TitleLabel.top
-        if #available(iOS 11.0, *) {
-            if IMUtils.getDeviceType() == .iPhoneX {
-                top = top + view.safeAreaInsets.top
-            }
+        if useSafeAreaInsets() {
+            top = top + getSafeAreaInsets().top
         }
         
         view.addConstraintsWithFormat("H:|-\(Layout.TitleLabel.leading)-[v0(\(Layout.TitleLabel.width))]", views: titleLabel)
@@ -92,8 +103,16 @@ extension IMGeneralMessageViewController {
     
 }
 
+// MARK: - IMGeneralMessageViewInjection
 extension IMGeneralMessageViewController: IMGeneralMessageViewInjection {
     
+    /**
+     * Load information
+     *
+     * - parameters:
+     *      -title: title to show
+     *      -message: message to show
+     */
     func load(title: String, message: String) {
         titleLabel.text = title
         messageLabel.text = message

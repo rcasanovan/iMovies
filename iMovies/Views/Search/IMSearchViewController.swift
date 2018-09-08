@@ -167,13 +167,9 @@ extension IMSearchViewController {
         // Add validation for iPhone X
         var top: CGFloat = 0.0
         var bottom: CGFloat = 0.0
-        if #available(iOS 11.0, *) {
-            // If we´re running iOS 11 && device type == iPhone X
-            // -> use the save area insets
-            if IMUtils.getDeviceType() == .iPhoneX {
-                top = view.safeAreaInsets.top
-                bottom = view.safeAreaInsets.bottom
-            }
+        if useSafeAreaInsets() {
+            top = getSafeAreaInsets().top
+            bottom = getSafeAreaInsets().bottom
         }
         
         view.addConstraintsWithFormat("H:|[v0]|", views: searchView)
