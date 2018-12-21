@@ -19,7 +19,7 @@ protocol EndpointProtocol: RawRepresentable where RawValue == String {
 private struct Url {
     
     static let baseUrl: String = "http://api.themoviedb.org/3"
-    static let apiKey: String = "e579f9a644180d2a8887223f0d0ad5ff"
+    static let apiKey: String = "ADD YOUR API KEY HERE"
     
     struct Fields {
         static let apiKey: String = "api_key"
